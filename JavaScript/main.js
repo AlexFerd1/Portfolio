@@ -1,4 +1,4 @@
-// Intersection Observer for animations
+// Intersection Observer for animations (if needed for additional animations)
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -13,26 +13,42 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
-//Hamburger navbar
+// Hamburger Navbar Functionality
 document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navLinks = document.getElementById("nav-links");
 
   // Toggle navigation and update the hamburger icon
   hamburgerMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburgerMenu.classList.toggle("active");
-
-    // Toggle between ☰ (hamburger) and × (close) icons
+    navLinks.classList.toggle("active"); // Toggle the 'active' class
+    // Change the hamburger icon to an 'X' when menu is active
     if (navLinks.classList.contains("active")) {
       hamburgerMenu.innerHTML = "×"; // "X" icon (close)
     } else {
       hamburgerMenu.innerHTML = "&#9776;"; // Hamburger icon (☰)
     }
   });
+
+  // Smooth scroll to section when anchor links are clicked
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default scroll behavior
+
+      // Scroll smoothly to the targeted section
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+
+      // Close the mobile menu after clicking a link (for mobile view)
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove("active"); // Close the menu
+        hamburgerMenu.innerHTML = "&#9776;"; // Reset hamburger icon
+      }
+    });
+  });
 });
 
-// smooth scrolling
+// Smooth Scroll to Specific Section on Mouse Wheel
 let sections = document.querySelectorAll(".full-screen-section");
 let currentSectionIndex = 0; // Keep track of the current section
 
@@ -56,22 +72,20 @@ document.addEventListener("wheel", function (e) {
   if (e.deltaY > 0) {
     // Scroll down: go to the next section
     if (currentSectionIndex < sections.length - 1) {
-      scrollToSection(currentSectionIndex + 1);
+      currentSectionIndex++; // Move to next section
     }
   } else {
     // Scroll up: go to the previous section
     if (currentSectionIndex > 0) {
-      scrollToSection(currentSectionIndex - 1);
+      currentSectionIndex--; // Move to previous section
     }
   }
+
+  // Scroll to the targeted section
+  scrollToSection(currentSectionIndex);
 
   // Allow scrolling again after a short delay
   setTimeout(function () {
     isScrolling = false;
-  }, 800); // You can adjust the timeout for scroll speed
-});
-
-// Prevent default scrolling behavior to avoid interference with full-screen scrolling
-document.body.addEventListener("wheel", function (e) {
-  passive: false;
+  }, 800); // Adjust timeout to control the scroll speed
 });

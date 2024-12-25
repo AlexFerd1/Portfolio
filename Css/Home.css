@@ -22,6 +22,9 @@ body {
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -32,6 +35,10 @@ body {
 .logo-img {
   width: 125px;
   height: 125px;
+}
+
+.fullscreen-section {
+  scroll-snap-align: start;
 }
 
 /* Navigation Links (PC) */
@@ -64,6 +71,8 @@ body {
 
 /* Section Styling */
 .section {
+  height: 100vh;
+  display: flex;
   padding: 100px 20px;
   margin-bottom: 40px;
 }

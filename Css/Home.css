@@ -7,12 +7,13 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Header Styling */
 header {
   background-color: #333;
-  color: white;
+  color: #ffffff;
   padding: 10px 20px;
 }
 
@@ -41,6 +42,26 @@ header {
 
 .nav-links li a:hover {
   text-decoration: underline;
+}
+.nav-links li a.nav-links.active {
+  color: red;
+  text-decoration: underline;
+}
+
+.section {
+  padding: 100px 20px;
+  margin-bottom: 40px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center; /* Center text horizontally */
+  padding: 10px 0;
+}
+
+#home {
+  background-color: aqua;
 }
 
 /* Hamburger Icon (Hidden for PC) */

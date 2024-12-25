@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Toggle navigation and update the hamburger icon
   hamburgerMenu.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+    hamburgerMenu.classList.toggle("active");
 
     // Toggle between ☰ (hamburger) and × (close) icons
     if (navLinks.classList.contains("active")) {

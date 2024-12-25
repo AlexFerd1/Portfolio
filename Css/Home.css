@@ -17,6 +17,11 @@ header {
   padding: 10px 20px;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -33,6 +38,8 @@ header {
   list-style: none;
   display: flex;
   gap: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animation for opacity and transform */
 }
 
 .nav-links li a {
@@ -43,25 +50,45 @@ header {
 .nav-links li a:hover {
   text-decoration: underline;
 }
-.nav-links li a.nav-links.active {
-  color: red;
-  text-decoration: underline;
+
+/* Active state for nav links */
+.nav-links.active {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0); /* Slide-in */
 }
 
+/* Section Styling */
 .section {
   padding: 100px 20px;
   margin-bottom: 40px;
 }
 
+/* Footer Styling */
 footer {
   background-color: #333;
   color: white;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
   padding: 10px 0;
 }
 
 #Home {
-  background-color: aqua;
+  background-color: rgb(0, 255, 255);
+}
+#About {
+  background-color: red;
+}
+#Skills {
+  background-color: green;
+}
+#Projects {
+  background-color: blueviolet;
+}
+#Contact {
+  background-color: blue;
+}
+#Resume {
+  background-color: orangered;
 }
 
 /* Hamburger Icon (Hidden for PC) */
@@ -73,12 +100,17 @@ footer {
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
-  top: 10px; /* Adjust this to place the icon in the top-right */
-  right: 10px; /* Adjust this to place the icon in the top-right */
-  z-index: 500;
+  top: 10px;
+  right: 10px;
+  z-index: 1001; /* Ensure it's on top of the navbar */
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Responsive (Mobile) */
+.hamburger.active {
+  transform: rotate(90deg); /* Rotate when active */
+}
+
+/* Mobile Styling (Hamburger + Nav Links) */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -88,24 +120,31 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #616161;
-    padding: 10px 0;
-    z-index: 1000;
+    position: fixed; /* Position it fixed on the screen */
+    top: 0;
+    left: 0; /* Align navbar to the left edge of the screen */
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: #696969d7;
+    padding: 20px 0;
+    z-index: 1000; /* Ensure it's below the hamburger */
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Initially moved off-screen to the right */
   }
 
   .nav-links.active {
     display: flex;
+    opacity: 1; /* Fade-in */
+    transform: translateX(0); /* Slide in from the right */
   }
 
   .nav-links li {
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0; /* Increase spacing between items */
+    font-size: 1.5rem;
   }
 }
+
 /* Landscape Mode (Tablet / Large Mobile) */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
   .nav-links {
@@ -130,6 +169,6 @@ footer {
   }
 
   .hamburger {
-    display: none;
+    display: none; /* Hide hamburger on desktop */
   }
 }

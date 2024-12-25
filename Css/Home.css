@@ -11,7 +11,7 @@ body {
 
 /* Header Styling */
 header {
-  background-color: #5f5f5f;
+  background-color: #333;
   color: #ffffff;
   padding: 10px 20px;
 }
@@ -35,7 +35,6 @@ html {
 .logo-img {
   width: 125px;
   height: 125px;
-  margin-left: -2%;
 }
 
 .fullscreen-section {
@@ -49,9 +48,8 @@ html {
   display: flex;
   gap: 20px;
   opacity: 1;
-  margin-top: 10%;
+  margin-top: -1%;
   margin-right: 14%;
-  z-index: 20%;
   transition: opacity 0.3s ease, transform 0.3s ease; /* Animation for opacity and transform */
 }
 
@@ -98,7 +96,7 @@ footer {
 }
 
 #Home {
-  background-color: #47053c;
+  background-color: #00ffff;
 }
 #About {
   background-color: red;

@@ -7,7 +7,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  scroll-behavior: smooth;
 }
 
 /* Header Styling */
@@ -20,12 +19,14 @@ header {
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo-img {
@@ -35,20 +36,23 @@ body {
 
 /* Navigation Links (PC) */
 .nav-links {
+  font-size: 16px;
   list-style: none;
   display: flex;
   gap: 20px;
   opacity: 1;
+  margin-top: -1%;
+  margin-right: 14%;
   transition: opacity 0.3s ease, transform 0.3s ease; /* Animation for opacity and transform */
 }
 
 .nav-links li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .nav-links li a:hover {
-  text-decoration: underline;
+  color: green;
 }
 
 /* Active state for nav links */
@@ -72,8 +76,18 @@ footer {
   padding: 10px 0;
 }
 
+.fullscreen-section {
+  height: 100vh; /* 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
 #Home {
-  background-color: rgb(0, 255, 255);
+  background-color: #00ffff;
 }
 #About {
   background-color: red;
@@ -134,6 +148,7 @@ footer {
 
   .nav-links.active {
     display: flex;
+    color: rgb(241, 0, 0);
     opacity: 1; /* Fade-in */
     transform: translateX(0); /* Slide in from the right */
   }
@@ -147,17 +162,37 @@ footer {
 
 /* Landscape Mode (Tablet / Large Mobile) */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  .nav-links {
-    flex-direction: row; /* Make navigation links appear in a row */
-    position: relative;
-    background-color: transparent; /* Remove background */
-    display: flex; /* Ensure the menu items are displayed inline */
-    gap: 20px; /* Maintain spacing between links */
-  }
-
   .hamburger {
     display: block;
     font-size: 30px; /* Increase size for better visibility */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed; /* Position it fixed on the screen */
+    top: 0;
+    left: 0; /* Align navbar to the left edge of the screen */
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: #696969d7;
+    padding: 20px 0;
+    z-index: 1000; /* Ensure it's below the hamburger */
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Initially moved off-screen to the right */
+  }
+
+  .nav-links.active {
+    display: flex;
+    color: rgb(241, 0, 0);
+    opacity: 1; /* Fade-in */
+    transform: translateX(0); /* Slide in from the right */
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 20px 0; /* Increase spacing between items */
+    font-size: 1.5rem;
   }
 }
 

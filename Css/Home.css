@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header Styling */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  width: 125px;
+  height: 125px;
+}
+
+/* Navigation Links (PC) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger Icon (Hidden for PC) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px; /* Adjust this to place the icon in the top-right */
+  right: 10px; /* Adjust this to place the icon in the top-right */
+  z-index: 500;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 30px; /* Increase size for better visibility */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #616161;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+/* Landscape Mode (Tablet / Large Mobile) */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .nav-links {
+    flex-direction: row; /* Make navigation links appear in a row */
+    position: relative;
+    background-color: transparent; /* Remove background */
+    display: flex; /* Ensure the menu items are displayed inline */
+    gap: 20px; /* Maintain spacing between links */
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 30px; /* Increase size for better visibility */
+  }
+}
+
+/* Desktop Mode */
+@media (min-width: 1025px) {
+  .nav-links {
+    display: flex; /* Ensure links appear inline on desktop */
+    gap: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

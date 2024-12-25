@@ -17,6 +17,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navLinks = document.getElementById("nav-links");
+  const navItems = document.querySelectorAll(".nav-links li a"); // Select all anchor links in the navbar
 
   // Toggle navigation and update the hamburger icon
   hamburgerMenu.addEventListener("click", () => {
@@ -27,6 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       hamburgerMenu.innerHTML = "&#9776;"; // Hamburger icon (☰)
     }
+  });
+
+  // Close the menu after clicking a link
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      navLinks.classList.remove("active"); // Close the mobile menu
+      hamburgerMenu.innerHTML = "&#9776;"; // Reset hamburger icon to default
+    });
   });
 
   // Smooth scroll to section when anchor links are clicked

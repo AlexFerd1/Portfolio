@@ -6,24 +6,50 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", serif;
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  min-height: 100vh; /* Ensure the body takes full viewport height */
 }
 
 html,
 body {
   height: 100%;
-  scroll-behavior: smooth;
-}
-
-html {
+  margin: 0;
   scroll-snap-type: y mandatory;
 }
+
+main {
+  flex-grow: 1; /* This allows the content to grow and fill the available space */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px; /* This ensures the footer doesn't overlap with content */
+}
+
+section {
+  flex-shrink: 0;
+}
+footer {
+  background-color: #2c2c2c;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+  width: 200%; /* Ensure footer spans full width */
+  position: relative;
+  margin-left: -5%;
+  margin-top: auto; /* Pushes the footer to the bottom of the page */
+}
+footer p:hover {
+  color: #020081;
+}
+
 .navbar {
   position: fixed; /* Keeps the navbar at the top */
   width: 100%;
   margin-top: -0.0009;
   background-color: #2c2c2c00;
-  color: rgba(255, 255, 255, 0);
+  color: #ffffff00;
   z-index: 10;
   padding: 23px 30px;
 }
@@ -40,11 +66,11 @@ html {
 
 /* Navigation Links (PC) */
 .nav-links {
-  font-size: 25px;
+  font-size: 30px;
   list-style: none;
   display: flex;
   margin-top: -1.7%;
-  margin-left: 70%;
+  margin-left: 74%;
   gap: 20px;
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease; /* Animation for opacity and transform */
@@ -74,27 +100,15 @@ html {
   margin-bottom: 40px;
 }
 
-/* Footer Styling */
-footer {
-  font-size: 20px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 10%;
-  margin-top: auto; /* Ensures footer is pushed to the bottom */
-}
-
 .fullscreen-section {
   height: 100vh; /* 100% of the viewport height */
   display: flex;
   /*justify-content: center;
-  align-items: center;
-  text-align: center;*/
+    align-items: center;
+    text-align: center;*/
   background-color: #f0f0f0;
-  color: #333;
+  color: #ff0000;
 }
-
 #Home {
   background-color: #000000;
 }
@@ -179,6 +193,17 @@ footer {
   .nav-links li a:hover {
     color: green;
   }
+  footer {
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    width: 200%; /* Ensure footer spans full width */
+    position: relative;
+    margin-left: -25%;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+  }
 }
 
 /* Landscape Mode (Tablet / Large Mobile - min-width: 769px and max-width: 1024px) */
@@ -223,6 +248,17 @@ footer {
   }
   .nav-links li a:hover {
     color: green;
+  }
+  footer {
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 0.69rem;
+    padding: 10px;
+    text-align: center;
+    width: 200%; /* Ensure footer spans full width */
+    position: relative;
+    margin-left: -10%;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
   }
 }
 

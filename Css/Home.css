@@ -177,6 +177,7 @@ p2 {
 
 /* Mobile Styling (Hamburger + Nav Links) */
 /* Mobile Mode (Portrait - max-width: 768px) */
+/*Pro Max model Iphone*/
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -260,6 +261,7 @@ p2 {
   }
 }
 
+/*Pro Max model Iphone*/
 /* Landscape Mode (Tablet / Large Mobile - min-width: 769px and max-width: 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
   .hamburger {
@@ -341,6 +343,172 @@ p2 {
     width: 200%; /* Ensure footer spans full width */
     position: relative;
     margin-left: -10%;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+  }
+}
+/*Pro model iphone*/
+@media (min-width: 385px) and (max-height: 844px) {
+  .hamburger {
+    display: block;
+    color: #03018b;
+    top: 10px;
+    left: 350px;
+    font-size: 30px; /* Increased size for better visibility */
+    z-index: 1001; /* Ensure hamburger is above the nav links */
+  }
+
+  .logo-img {
+    transform: translate(-30%, -40%);
+    width: 100px;
+    height: 100px;
+  }
+  p0 {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 30%;
+    margin-left: 5%;
+  }
+  p {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 30%;
+    margin-left: 10%;
+  }
+  p1 {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 45%;
+    margin-left: -40%;
+  }
+  p2 {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 60%;
+    margin-left: -39%;
+  }
+
+  .nav-links {
+    /* Hidden by default */
+    flex-direction: column;
+    /*text-align: center;*/
+    width: 100%;
+    height: 48%;
+    background-color: #000d55ce; /* Adjust background color */
+    position: fixed;
+    top: 0.8%;
+    left: -10%;
+    color: #ffffff;
+    transform: translateX(100%); /* Slide in from the right */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Initially hidden */
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0); /* Menu slides in */
+  }
+
+  .nav-links li {
+    transform: translate(1%, 200%);
+    margin: 5px 15px;
+    font-size: 1.5rem;
+  }
+  .nav-links li a:hover {
+    color: green;
+  }
+  footer {
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 0.8rem;
+    padding: 10px;
+    text-align: center;
+    width: 200%; /* Ensure footer spans full width */
+    position: relative;
+    margin-left: -10%;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+  }
+}
+/*Pro model Iphone*/
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .hamburger {
+    display: block;
+    color: #03018b;
+    top: 10px;
+    left: 800px;
+    font-size: 30px; /* Increased size for better visibility */
+    z-index: 1001; /* Ensure hamburger is above the nav links */
+  }
+
+  .logo-img {
+    transform: translate(-30%, -40%);
+    width: 100px;
+    height: 100px;
+  }
+  p0 {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 10%;
+    margin-left: 5%;
+  }
+  p {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+  p1 {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 15%;
+    margin-left: 20%;
+  }
+  p2 {
+    font-family: "Roboto", serif;
+    font-size: 15px;
+    margin-top: 20%;
+    margin-left: -20%;
+  }
+
+  .nav-links {
+    /* Hidden by default */
+    flex-direction: column;
+    /*text-align: center;*/
+    width: 100%;
+    height: 200%;
+    background-color: #000d55ce; /* Adjust background color */
+    position: fixed;
+    top: 0.8%;
+    left: 5%;
+    color: #ffffff;
+    transform: translateX(100%); /* Slide in from the right */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Initially hidden */
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0); /* Menu slides in */
+  }
+
+  .nav-links li {
+    transform: translate(1%, 200%);
+    margin: 5px 15px;
+    font-size: 1.5rem;
+  }
+  .nav-links li a:hover {
+    color: green;
+  }
+  footer {
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    width: 200%; /* Ensure footer spans full width */
+    position: relative;
+    margin-left: -5%;
     margin-top: auto; /* Pushes the footer to the bottom of the page */
   }
 }

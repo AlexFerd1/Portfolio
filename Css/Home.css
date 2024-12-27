@@ -1,526 +1,112 @@
-/* General Reset */
+/* Reset some basic styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body and layout styling */
 body {
-  font-family: "Roboto", serif;
-  display: flex;
-  flex-direction: column; /* Stack sections vertically */
-  min-height: 100vh; /* Ensure the body takes full viewport height */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #000000;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  scroll-snap-type: y mandatory;
+header {
+  background-color: #b30a0a00;
+  color: #fff;
+  padding: 1rem;
 }
-
-main {
-  flex-grow: 1; /* This allows the content to grow and fill the available space */
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 50px; /* This ensures the footer doesn't overlap with content */
+img {
+  max-width: 100%;
 }
-
-section {
-  flex-shrink: 0;
-}
-footer {
-  background-color: #2c2c2c;
-  color: white;
-  font-size: 1.5rem;
-  padding: 10px;
-  text-align: center;
-  width: 200%; /* Ensure footer spans full width */
-  position: relative;
-  margin-left: -5%;
-  margin-top: auto; /* Pushes the footer to the bottom of the page */
-}
-footer p4:hover {
-  color: #020081;
-}
-
-.navbar {
-  position: fixed; /* Keeps the navbar at the top */
-  width: 100%;
-  margin-top: -0.0009;
-  background-color: #2c2c2c00;
-  color: #ffffff00;
-  z-index: 10;
-  padding: 23px 30px;
-}
-
-.logo-img {
-  transform: translate(200px, 25px);
+.logo img {
   width: 125px;
   height: 125px;
 }
-
-.fullscreen-section {
-  scroll-snap-align: start;
-}
-
-/* Navigation Links (PC) */
-.nav-links {
-  font-size: 30px;
+nav ul {
   list-style: none;
   display: flex;
-  margin-top: -1.7%;
-  margin-left: 74%;
-  gap: 20px;
-  opacity: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Animation for opacity and transform */
+  justify-content: flex-end;
 }
 
-.nav-links li a {
-  color: #b40a0a;
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #060201;
   text-decoration: none;
 }
 
-.nav-links li a:hover {
-  color: green;
+main {
+  flex: 1;
+  padding: 2rem;
 }
 
-/* Active state for nav links */
-.nav-links.active {
-  display: flex;
-  opacity: 1;
-  transform: translateX(0); /* Slide-in */
+.hero {
+  background-color: #2196f3;
+  color: #2c106d;
+  padding: 3rem;
+  text-align: center;
 }
 
-/* Section Styling */
-.section {
-  height: 100vh;
-  display: flex;
-  padding: 100px 20px;
-  margin-bottom: 40px;
-}
-
-.fullscreen-section {
-  height: 100vh; /* 100% of the viewport height */
-  display: flex;
-  /*justify-content: center;
-      align-items: center;
-      text-align: center;*/
-  background-color: #f0f0f0;
-  color: #ff0000;
-}
-p0 {
-  white-space: nowrap;
-  font-family: "Roboto", serif;
-  font-size: 55px;
-  margin-top: 8%;
-  margin-left: 10%;
-}
-p {
-  white-space: nowrap;
-  font-family: "Roboto", serif;
-  font-size: 10px;
-  margin-top: 8%;
-  margin-left: 30%;
-}
-p1 {
-  white-space: nowrap;
-  font-family: "Roboto", serif;
-  font-size: 50px;
-  margin-top: 16%;
-  margin-left: -8%;
-}
-p2 {
-  white-space: nowrap;
-  font-family: "Roboto", serif;
-  font-size: 50px;
-  margin-top: 25%;
-  margin-left: -5%;
-}
-#Home {
-  background-color: #000000;
-}
-#About {
-  background-color: #000000;
-}
-#Skills {
-  background-color: #000000;
-}
-#Projects {
-  background-color: #000000;
-}
-#Contact {
-  background-color: #000000;
-}
-#Resume {
-  background-color: #000000;
-}
-
-/* Hamburger Icon (Hidden for PC) */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  color: #ff0000;
+.hero h1 {
   font-size: 2rem;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1001; /* Ensure it's on top of the navbar */
-  transition: transform 0.3s ease-in-out;
 }
 
-.hamburger.active {
-  transform: rotate(90deg); /* Rotate when active */
+.hero p {
+  font-size: 1.2rem;
 }
 
-/* Mobile Styling (Hamburger + Nav Links) */
-/* Mobile Mode (Portrait - max-width: 768px) */
-/*Pro Max model Iphone*/
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: #363636;
+  color: #fff;
+  text-align: center;
+  width: 100vw;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-left: -2rem;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    color: #03018b;
-    top: 10px;
-    left: 380px;
-    font-size: 30px; /* Increased size for better visibility */
-    z-index: 1001; /* Ensure hamburger is above the nav links */
-  }
-
-  .logo-img {
-    transform: translate(-30%, -40%);
-    width: 100px;
-    height: 100px;
-  }
-  p0 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 30%;
-    margin-left: 5%;
-  }
-  p {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 30%;
-    margin-left: 10%;
-  }
-  p1 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 45%;
-    margin-left: -40%;
-  }
-  p2 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 60%;
-    margin-left: -39%;
-  }
-
-  .nav-links {
-    /* Hidden by default */
-    flex-direction: column;
-    /*text-align: center;*/
-    width: 100%;
-    height: 45%;
-    background-color: #000d55ce; /* Adjust background color */
-    position: fixed;
-    top: 0.8%;
-    left: -8%;
-    color: #ffffff;
-    transform: translateX(100%); /* Slide in from the right */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 0; /* Initially hidden */
-  }
-
-  .nav-links.active {
-    display: flex;
-    opacity: 1;
-    transform: translateX(0); /* Menu slides in */
-  }
-
-  .nav-links li {
-    transform: translate(1%, 200%);
-    margin: 5px 15px;
+  .hero h1 {
     font-size: 1.5rem;
   }
-  .nav-links li a:hover {
-    color: green;
-  }
-  footer {
-    background-color: #2c2c2c;
-    color: white;
+
+  .hero p {
     font-size: 1rem;
-    padding: 10px;
-    text-align: center;
-    width: 200%; /* Ensure footer spans full width */
-    position: relative;
-    margin-left: -25%;
-    margin-top: auto; /* Pushes the footer to the bottom of the page */
-  }
-}
-
-/*Pro Max model Iphone*/
-/* Landscape Mode (Tablet / Large Mobile - min-width: 769px and max-width: 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  .hamburger {
-    display: block;
-    top: 10px;
-    left: 880px;
-    font-size: 30px; /* Increased size for better visibility */
-    z-index: 1000; /* Ensure hamburger is above the nav links */
   }
 
-  .nav-links {
-    /* Hidden by default */
+  nav ul {
     flex-direction: column;
-    /*text-align: center;*/
-    width: 100%;
-    height: 90%;
-    background-color: #1f1f1f85; /* Adjust background color */
-    position: fixed;
-    top: 0.8%;
-    left: 8%;
-    color: #ffffff;
-    transform: translateX(100%); /* Slide in from the right */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 0; /* Initially hidden */
-  }
-  p0 {
-    white-space: nowrap;
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 14%;
-    margin-left: 10%;
-  }
-  p {
-    white-space: nowrap;
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 14%;
-    margin-left: 20%;
-  }
-  p1 {
-    white-space: nowrap;
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 22%;
-    margin-left: -15%;
-  }
-  p2 {
-    white-space: nowrap;
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 30%;
-    margin-left: -15%;
-  }
-  .logo-img {
-    transform: translate(-30%, -40%);
-    width: 100px;
-    height: 100px;
-  }
-  .nav-links.active {
-    display: flex;
-    opacity: 1; /* Fade-in */
-    transform: translateX(0); /* Slide in from the right */
+    align-items: center;
   }
 
-  .nav-links li {
-    transform: translate(1%, 200%);
-    margin: 1px 15px;
-    font-size: 1.5rem;
-  }
-  .nav-links li a:hover {
-    color: green;
-  }
-  footer {
-    background-color: #2c2c2c;
-    color: white;
-    font-size: 0.69rem;
-    padding: 10px;
-    text-align: center;
-    width: 200%; /* Ensure footer spans full width */
-    position: relative;
-    margin-left: -10%;
-    margin-top: auto; /* Pushes the footer to the bottom of the page */
-  }
-}
-/*Pro model iphone*/
-@media (min-width: 385px) and (max-height: 844px) {
-  .hamburger {
-    display: block;
-    color: #03018b;
-    top: 10px;
-    left: 350px;
-    font-size: 30px; /* Increased size for better visibility */
-    z-index: 1001; /* Ensure hamburger is above the nav links */
-  }
-
-  .logo-img {
-    transform: translate(-30%, -40%);
-    width: 100px;
-    height: 100px;
-  }
-  p0 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 30%;
-    margin-left: 5%;
-  }
-  p {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 30%;
-    margin-left: 10%;
-  }
-  p1 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 45%;
-    margin-left: -40%;
-  }
-  p2 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 60%;
-    margin-left: -39%;
-  }
-
-  .nav-links {
-    /* Hidden by default */
-    flex-direction: column;
-    /*text-align: center;*/
-    width: 100%;
-    height: 48%;
-    background-color: #000d55ce; /* Adjust background color */
-    position: fixed;
-    top: 0.8%;
-    left: -10%;
-    color: #ffffff;
-    transform: translateX(100%); /* Slide in from the right */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 0; /* Initially hidden */
-  }
-
-  .nav-links.active {
-    display: flex;
-    opacity: 1;
-    transform: translateX(0); /* Menu slides in */
-  }
-
-  .nav-links li {
-    transform: translate(1%, 200%);
-    margin: 5px 15px;
-    font-size: 1.5rem;
-  }
-  .nav-links li a:hover {
-    color: green;
-  }
-  footer {
-    background-color: #2c2c2c;
-    color: white;
-    font-size: 0.8rem;
-    padding: 10px;
-    text-align: center;
-    width: 200%; /* Ensure footer spans full width */
-    position: relative;
-    margin-left: -10%;
-    margin-top: auto; /* Pushes the footer to the bottom of the page */
-  }
-}
-/*Pro model Iphone*/
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  .hamburger {
-    display: block;
-    color: #03018b;
-    top: 10px;
-    left: 800px;
-    font-size: 30px; /* Increased size for better visibility */
-    z-index: 1001; /* Ensure hamburger is above the nav links */
-  }
-
-  .logo-img {
-    transform: translate(-30%, -40%);
-    width: 100px;
-    height: 100px;
-  }
-  p0 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 10%;
-    margin-left: 5%;
-  }
-  p {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 10%;
-    margin-left: 10%;
-  }
-  p1 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 15%;
-    margin-left: 20%;
-  }
-  p2 {
-    font-family: "Roboto", serif;
-    font-size: 15px;
-    margin-top: 20%;
-    margin-left: -20%;
-  }
-
-  .nav-links {
-    /* Hidden by default */
-    flex-direction: column;
-    /*text-align: center;*/
-    width: 100%;
-    height: 200%;
-    background-color: #000d55ce; /* Adjust background color */
-    position: fixed;
-    top: 0.8%;
-    left: 5%;
-    color: #ffffff;
-    transform: translateX(100%); /* Slide in from the right */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 0; /* Initially hidden */
-  }
-
-  .nav-links.active {
-    display: flex;
-    opacity: 1;
-    transform: translateX(0); /* Menu slides in */
-  }
-
-  .nav-links li {
-    transform: translate(1%, 200%);
-    margin: 5px 15px;
-    font-size: 1.5rem;
-  }
-  .nav-links li a:hover {
-    color: green;
-  }
-  footer {
-    background-color: #2c2c2c;
-    color: white;
-    font-size: 1rem;
-    padding: 10px;
-    text-align: center;
-    width: 200%; /* Ensure footer spans full width */
-    position: relative;
-    margin-left: -5%;
-    margin-top: auto; /* Pushes the footer to the bottom of the page */
+  nav ul li {
+    margin: 10px 0;
   }
 }
 
-/* Desktop Mode (min-width: 1025px) */
-@media (min-width: 1025px) {
-  .nav-links {
-    display: flex; /* Ensure links appear inline on desktop */
-    gap: 20px;
+/* Landscape mobile styles */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .hero h1 {
+    font-size: 2rem;
   }
 
-  .hamburger {
-    display: none; /* Hide hamburger on desktop */
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }

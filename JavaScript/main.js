@@ -1,139 +1,131 @@
-// ===============================
-// Intersection Observer for animations
-// ===============================
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
 
-// Apply observer to all elements with class "hidden"
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach((el) => observer.observe(el));
+// Smooth Scrolling and Section Highlighting
 
-
-// ===============================
-// DOMContentLoaded: Hamburger menu & anchor links
-// ===============================
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerMenu = document.getElementById("hamburger-menu");
-  const navLinks = document.getElementById("nav-links");
-  const navItems = document.querySelectorAll(".nav-links li a");
+  const sections = document.querySelectorAll(".section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const dots = document.querySelectorAll(".scroll-dots .dot");
 
-  // Toggle mobile navigation
-  hamburgerMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+  let isScrolling = false;
+  let currentSectionIndex = 0;
 
-    // Toggle hamburger icon between ☰ and ×
-    hamburgerMenu.innerHTML = navLinks.classList.contains("active") ? "×" : "&#9776;";
-  });
+  function scrollToSection(index) {
+    if (index < 0) index = 0;
+    if (index >= sections.length) index = sections.length - 1;
 
-  // Close mobile menu when a nav item is clicked
-  navItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      hamburgerMenu.innerHTML = "&#9776;";
-    });
-  });
+    if (isScrolling) return;
+    isScrolling = true;
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-
-      // Close mobile menu after click on mobile
-      if (window.innerWidth <= 768) {
-        navLinks.classList.remove("active");
-        hamburgerMenu.innerHTML = "&#9776;";
-      }
-    });
-  });
-});
-
-
-// ===============================
-// Full-page mouse wheel scroll
-// ===============================
-const sections = document.querySelectorAll(".section");
-let currentSectionIndex = 0;
-let isScrolling = false;
-
-function scrollToSection(index) {
-  if (index >= 0 && index < sections.length) {
     sections[index].scrollIntoView({ behavior: "smooth" });
     currentSectionIndex = index;
-  }
-}
 
-document.addEventListener("wheel", function (e) {
-  if (isScrolling) return;
-
-  isScrolling = true;
-
-  if (e.deltaY > 0) {
-    currentSectionIndex++;
-  } else {
-    currentSectionIndex--;
+    // Wait for scroll animation to finish before allowing next scroll
+    setTimeout(() => {
+      isScrolling = false;
+    }, 700); // adjust timing if needed
   }
 
-  scrollToSection(currentSectionIndex);
+  // -------- Wheel scroll --------
+  window.addEventListener("wheel", (e) => {
+    if (isScrolling) return;
+    if (e.deltaY > 0) currentSectionIndex++;
+    else currentSectionIndex--;
+    scrollToSection(currentSectionIndex);
+  }, { passive: true });
 
-  setTimeout(function () {
-    isScrolling = false;
-  }, 800);
-});
+  // -------- Auto-highlight nav links & dots --------
+  function updateActiveNav() {
+    let scrollPos = window.scrollY + 100; // offset for navbar
+    let currentId = sections[0].id;
 
+    sections.forEach((section, idx) => {
+      if (scrollPos >= section.offsetTop) {
+        currentSectionIndex = idx; // update current index
+        currentId = section.id;
+      }
+    });
 
-const dots = document.querySelectorAll(".scroll-dots .dot");
+    navLinks.forEach(link => {
+      link.classList.toggle("active", link.getAttribute("href") === "#" + currentId);
+    });
 
-// Highlight the dot based on scroll
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 200; // offset for navbar height
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
+    dots.forEach(dot => {
+      dot.classList.toggle("active", dot.dataset.target === currentId);
+    });
+  }
 
-  dots.forEach((dot) => {
-    dot.classList.remove("active");
-    if (dot.dataset.target === current) {
-      dot.classList.add("active");
-    }
-  });
-});
+  window.addEventListener("scroll", updateActiveNav);
+  updateActiveNav(); // run on page load
 
-// Update active dot on scroll
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 200; // adjust if navbar is fixed
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  dots.forEach((dot) => {
-    dot.classList.remove("active");
-    if (dot.dataset.target === current) {
-      dot.classList.add("active");
-    }
+  // -------- Dot click scroll --------
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const target = document.getElementById(dot.dataset.target);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    });
   });
 });
 
-// Scroll to section when dot is clicked
-dots.forEach((dot) => {
-  dot.addEventListener("click", () => {
-    const target = document.getElementById(dot.dataset.target);
-    target.scrollIntoView({ behavior: "smooth" });
+
+
+// Neon Trail Effect for Mouse Cursor
+document.addEventListener("DOMContentLoaded", () => {
+  const canvas = document.getElementById("neon-trail");
+  const ctx = canvas.getContext("2d");
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  const trail = [];
+  const trailLength = 30; // length of the trail
+
+  // Initialize trail points at center
+  for (let i = 0; i < trailLength; i++) {
+    trail.push({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+  }
+
+  const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  document.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
   });
+
+  const neonColor = "rgba(255, 255, 255, 1)"; // your solid neon color
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Smoothly update trail points
+    let x = mouse.x;
+    let y = mouse.y;
+    for (let i = 0; i < trail.length; i++) {
+      trail[i].x += (x - trail[i].x) * 0.25;
+      trail[i].y += (y - trail[i].y) * 0.25;
+      x = trail[i].x;
+      y = trail[i].y;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw smooth solid neon trail
+    for (let i = 1; i < trail.length; i++) {
+      const alpha = i / trail.length; // fade older points
+      ctx.strokeStyle = `rgba(255, 255, 255, 1 ${alpha})`; // neonColor with alpha
+      ctx.lineWidth = 6;
+      ctx.shadowColor = neonColor;
+      ctx.shadowBlur = 15;
+      ctx.lineCap = "round";
+
+      ctx.beginPath();
+      ctx.moveTo(trail[i - 1].x, trail[i - 1].y);
+      ctx.lineTo(trail[i].x, trail[i].y);
+      ctx.stroke();
+    }
+  }
+
+  animate();
 });

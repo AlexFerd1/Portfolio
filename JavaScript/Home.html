@@ -13,10 +13,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="/css/Home.css" />
   <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico" />
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.28/build/spline-viewer.js"></script> <!-- spline-->
 </head>
 <body>
 
-  <!-- Navbar / Header -->
+
+<!-- Spline 3D Background -->
+<div class="spline-container">
+  <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/DAfOz-HSjvbMttZV/scene.splinecode"></spline-viewer>
+</div>
+
+<!-- Navbar / Header -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -30,11 +37,11 @@
 
       <!-- Navigation Links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="#Home"><span>0.</span> Home</a></li>
-        <li><a href="#About"><span>1.</span> About</a></li>
-        <li><a href="#Skills"><span>2.</span> Skills</a></li>
-        <li><a href="#Projects"><span>3.</span> Projects</a></li>
-        <li><a href="#Contact"><span>4.</span> Contact</a></li>
+        <li><a href="#Home"><span>0.</span> Home</a></li><li class ="separator">|</li>
+        <li><a href="#About"><span>1.</span> About</a></li><li class ="separator">|</li>
+        <li><a href="#Skills"><span>2.</span> Skills</a></li><li class ="separator">|</li>
+        <li><a href="#Projects"><span>3.</span> Projects</a></li><li class ="separator">|</li>
+        <li><a href="#Contact"><span>4.</span> Contact</a></li><li class ="separator">|</li>
         <li><a href="#Resume"><span>5.</span> Resume</a></li>
       </ul>
     </nav>
@@ -42,45 +49,76 @@
 
   <!-- Main content -->
   <main>
-    <section id="Home" class="section" style="background:#000000a4;">
-      <h1>Welcome to My Website</h1>
-      <p>I am thrilled to have you here. While exploring this site, I hope you learn more about me.</p>
+    <section id="Home" class="section">
+      <h1>Welcome
+        I'm Alex
+      </h1>
+      <p>Interact with the 3D model below.</p>
+      <p1>I am thrilled to have you here. While exploring this site, I hope you learn more about me.</p1>
     </section>
 
-    <section id="About" class="section" style="background:#000000;">
-      <h2>About Me</h2>
-      <p>Information about your business or purpose.</p>
+    <section id="About" class="section">
+      <h2>About</h2>
+      <p2>Information about your business or purpose.</p2>
     </section>
 
-    <section id="Skills" class="section" style="background:#000000;">
-      <h2>My Skills</h2>
-      <p>Describe your skills here.</p>
+    <section id="Skills" class="section">
+      <h3>My Skills</h3>
+      <p3>Describe your skills here.</p3>
     </section>
 
-    <section id="Projects" class="section" style="background:#000000;">
-      <h2>Projects</h2>
-      <p>Some of my projects:</p>
+    <section id="Projects" class="section">
+      <h4>Projects</h4>
+      <p4>Some of my projects:</p4>
       
     </section>
 
-    <section id="Contact" class="section" style="background:#000000;">
-      <h2>Contact Me</h2>
-      <p>Reach out to me here.</p>
-      <form>
-        <label for="proj-name">Name:</label>
-        <input type="text" id="proj-name" name="name" required />
+    <section id="Contact" class="section">
+  <h5>Contact</h5>
+  <p5>Any Questions? Don't hesitate to reach out!</p5>
 
-        <label for="proj-email">Email:</label>
-        <input type="email" id="proj-email" name="email" required />
+  <form>
+    <label for="proj-name">Name:</label>
+    <input type="text" id="proj-name" name="name" required />
 
-        <button>Submit</button>
-      </form>
+    <label for="proj-email">Email:</label>
+    <input type="email" id="proj-email" name="email" required />
+
+    <label for="proj-message">Message:</label>
+    <textarea id="proj-message" name="message" required></textarea>
+
+    <button>Submit</button>
+  </form>
+
+  <!-- Social links -->
+  <ul class="social-forms">
+    <li>
+      <a href="https://www.linkedin.com/in/alex-ferdico-294941a0" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        <span class="social-text">Alex Ferdico</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/AlexFerd1" target="_blank">
+        <i class="fab fa-github"></i>
+        <span class="social-text">AlexFerd1</span>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:alex.ferdico@example.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+        <span class="social-text">Alexferdico57@gmail.com</span>
+      </a>
+    </li>
+  </ul>
+</section>
+ 
+  
+    <!--<section id="Resume" class="section">
+      <h6>Resume</h6>
+      <p6>Download or view my resume here.</p6>
     </section>
-
-    <section id="Resume" class="section" style="background:#000000;">
-      <h2>Resume</h2>
-      <p>Download or view my resume here.</p>
-    </section>
+  -->
   </main>
 <!-- Scroll Dots -->
 <div class="scroll-dots">
@@ -89,13 +127,16 @@
   <div class="dot" data-target="Skills"></div>
   <div class="dot" data-target="Projects"></div>
   <div class="dot" data-target="Contact"></div>
-  <div class="dot" data-target="Resume"></div>
+ <!-- <div class="dot" data-target="Resume"></div> -->
 </div>
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Alex Ferdico. All Rights Reserved.</p>
+    <p>&copy; 2026 Alex Ferdico. All Rights Reserved.</p>
   </footer>
-
+<!-- Neon cursor element -->
+  <canvas id="neon-trail"></canvas>
+  <canvas id="canvas3d"></canvas> <!-- Interactive 3D Blob -->
   <script src="main.js"></script>
+  <script type="module" src="spline.js"></script>
 </body>
 </html>

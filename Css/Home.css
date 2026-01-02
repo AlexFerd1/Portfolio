@@ -87,6 +87,7 @@ html,body
 
   position: absolute;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 60px;
   color: #ffffff;
   text-align: center;
   max-width: 600px;                    
@@ -144,12 +145,13 @@ html,body
 {
   position: absolute;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
   color: #ffffff;
   text-align: center;
   max-width: 600px;                    
   margin: 0.5rem auto; 
   left:10%;
-  top:40%;
+  top:30%;
 }
 
 /* Contact section container */
@@ -217,48 +219,6 @@ html,body
   white-space: nowrap;
 }
 
-.contact-box {
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent dark background */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  max-width: 500px;       /* width of the box */
-  width: 90%;             /* responsive */
-  margin: 20px auto;      /* center horizontally */
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Style inputs and textarea */
-.contact-box input,
-.contact-box textarea {
-  width: 100%;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 10px;
-  background-color: #ffffff;
-  color: #fff;
-  font-size: 1rem;
-  resize: vertical; /* allow vertical resizing of textarea */
-}
-
-/* Style button */
-.contact-box button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  background-color: #713fff; /* neon-like color */
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.contact-box button:hover {
-  background-color: #8c5fff;
-  transform: scale(1.05);
-}
 
 
 .scroll-dots
@@ -273,6 +233,50 @@ html,body
   z-index: 1000;
 }
 
+/* Form container */
+#Contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  padding: 20px;
+  background: rgb(0, 0, 0);
+  border-radius: 15px;
+  margin-left: 60%;
+  box-shadow: 0 0 20px rgba(113, 70, 255, 0.7); /* neon glow */
+  color: #fff;
+}
+
+/* Labels */
+#Contact form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Inputs & Textarea */
+#Contact form input,
+#Contact form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #111;
+  color: #fff;
+  font-size: 2rem;
+  width: 100%;
+}
+
+/* Button */
+#Contact form button {
+ padding: 12px 30px;        /* more padding for pill shape */
+  border-radius: 50px;        /* makes it fully rounded */
+  border: none;               /* remove default border */
+  background-color: #121258;
+  color: #fff;                /* white text */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;  /* smooth hover effect */
+}
 
 .dot 
 {
@@ -448,7 +452,7 @@ button::after
   position: absolute;
   height: 100%;
   width: 100%;
-  border-radius: 1000px;
+  border-radius: 2000px;
   background: #ffffff;
   background-image: linear-gradient(to bottom right, #008cff,#e100ff);
   z-index: -1;
@@ -457,7 +461,7 @@ button::after
 button:hover
 {
   z-index: 0;
-  box-shadow: 40px 0 100px #008cff5d,-40px 0 100px #e100ff98;
+  box-shadow: 50px 0 100px #008cff5d,-40px 0 100px #e100ff98;
 }
 
 footer 
@@ -559,5 +563,13 @@ form
 
   .nav-links li {
     margin: 15px 0;
+  }
+}
+
+/* Contact Box on mobile*/
+@media screen and (max-width: 768px) {
+  #Contact {
+    justify-content: center;
+    padding: 40px 20px;
   }
 }

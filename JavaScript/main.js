@@ -1,4 +1,6 @@
-// Intersection Observer for animations (if needed for additional animations)
+// ===============================
+// Intersection Observer for animations
+// ===============================
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -9,59 +11,61 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-// Apply the observer to all hidden elements
+// Apply observer to all elements with class "hidden"
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
-// Hamburger Navbar Functionality
+
+// ===============================
+// DOMContentLoaded: Hamburger menu & anchor links
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navLinks = document.getElementById("nav-links");
-  const navItems = document.querySelectorAll(".nav-links li a"); // Select all anchor links in the navbar
+  const navItems = document.querySelectorAll(".nav-links li a");
 
-  // Toggle navigation and update the hamburger icon
+  // Toggle mobile navigation
   hamburgerMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("active"); // Toggle the 'active' class
-    // Change the hamburger icon to an 'X' when menu is active
-    if (navLinks.classList.contains("active")) {
-      hamburgerMenu.innerHTML = "×"; // "X" icon (close)
-    } else {
-      hamburgerMenu.innerHTML = "&#9776;"; // Hamburger icon (☰)
-    }
+    navLinks.classList.toggle("active");
+
+    // Toggle hamburger icon between ☰ and ×
+    hamburgerMenu.innerHTML = navLinks.classList.contains("active") ? "×" : "&#9776;";
   });
 
-  // Close the menu after clicking a link
+  // Close mobile menu when a nav item is clicked
   navItems.forEach((item) => {
     item.addEventListener("click", () => {
-      navLinks.classList.remove("active"); // Close the mobile menu
-      hamburgerMenu.innerHTML = "&#9776;"; // Reset hamburger icon to default
+      navLinks.classList.remove("active");
+      hamburgerMenu.innerHTML = "&#9776;";
     });
   });
 
-  // Smooth scroll to section when anchor links are clicked
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default scroll behavior
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
 
-      // Scroll smoothly to the targeted section
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-      });
-
-      // Close the mobile menu after clicking a link (for mobile view)
+      // Close mobile menu after click on mobile
       if (window.innerWidth <= 768) {
-        navLinks.classList.remove("active"); // Close the menu
-        hamburgerMenu.innerHTML = "&#9776;"; // Reset hamburger icon
+        navLinks.classList.remove("active");
+        hamburgerMenu.innerHTML = "&#9776;";
       }
     });
   });
 });
 
-// Smooth Scroll to Specific Section on Mouse Wheel
-let sections = document.querySelectorAll(".full-screen-section");
-let currentSectionIndex = 0; // Keep track of the current section
 
-// Function to scroll to a specific section
+// ===============================
+// Full-page mouse wheel scroll
+// ===============================
+const sections = document.querySelectorAll(".section");
+let currentSectionIndex = 0;
+let isScrolling = false;
+
 function scrollToSection(index) {
   if (index >= 0 && index < sections.length) {
     sections[index].scrollIntoView({ behavior: "smooth" });
@@ -69,32 +73,67 @@ function scrollToSection(index) {
   }
 }
 
-// Mouse wheel scrolling to move to next/previous section
-let isScrolling = false;
-
 document.addEventListener("wheel", function (e) {
-  if (isScrolling) return; // Prevent rapid scrolling
+  if (isScrolling) return;
 
-  isScrolling = true; // Prevent multiple scroll triggers
+  isScrolling = true;
 
-  // Check if the wheel scrolls down (positive deltaY) or up (negative deltaY)
   if (e.deltaY > 0) {
-    // Scroll down: go to the next section
-    if (currentSectionIndex < sections.length - 1) {
-      currentSectionIndex++; // Move to next section
-    }
+    currentSectionIndex++;
   } else {
-    // Scroll up: go to the previous section
-    if (currentSectionIndex > 0) {
-      currentSectionIndex--; // Move to previous section
-    }
+    currentSectionIndex--;
   }
 
-  // Scroll to the targeted section
   scrollToSection(currentSectionIndex);
 
-  // Allow scrolling again after a short delay
   setTimeout(function () {
     isScrolling = false;
-  }, 800); // Adjust timeout to control the scroll speed
+  }, 800);
+});
+
+
+const dots = document.querySelectorAll(".scroll-dots .dot");
+
+// Highlight the dot based on scroll
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 200; // offset for navbar height
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  dots.forEach((dot) => {
+    dot.classList.remove("active");
+    if (dot.dataset.target === current) {
+      dot.classList.add("active");
+    }
+  });
+});
+
+// Update active dot on scroll
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 200; // adjust if navbar is fixed
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  dots.forEach((dot) => {
+    dot.classList.remove("active");
+    if (dot.dataset.target === current) {
+      dot.classList.add("active");
+    }
+  });
+});
+
+// Scroll to section when dot is clicked
+dots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    const target = document.getElementById(dot.dataset.target);
+    target.scrollIntoView({ behavior: "smooth" });
+  });
 });

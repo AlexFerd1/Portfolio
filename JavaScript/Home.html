@@ -1,144 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Ferdico's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/Home.css" />
-    <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico" />
-  </head>
-  <body>
-    <!-- Main Content Container -->
-    <div class="container">
-      <!-- Navbar Section -->
-      <header>
-        <nav class="navbar">
-          <!-- Logo -->
-          <div class="logo">
-            <a href="Home.html">
-              <img
-                src="/images/Homelogo.png"
-                alt="Alex Ferdico Logo"
-                class="logo-img"
-              />
-            </a>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Ferdico's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/Home.css" />
+  <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico" />
+</head>
+<body>
 
-          <!-- Hamburger Icon (for Mobile) -->
-          <button
-            class="hamburger"
-            id="hamburger-menu"
-            aria-label="Toggle navigation"
-          >
-            &#9776;
-          </button>
+  <!-- Navbar / Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="Home.html">
+          <img src="/images/Homelogo.png" alt="HomePageLogo" class="logo-img" />
+        </a>
+      </div>
 
-          <!-- Navigation Links -->
-          <ul class="nav-links" id="nav-links" role="navigation">
-            <li>
-              <a href="#Home"><span style="padding-right: 5px">0.</span>Home</a>
-            </li>
-            <li>
-              <a href="#About"
-                ><span style="padding-right: 5px">1.</span>About</a
-              >
-            </li>
-            <li>
-              <a href="#Skills"
-                ><span style="padding-right: 5px">2.</span>Skills</a
-              >
-            </li>
-            <li>
-              <a href="#Projects"
-                ><span style="padding-right: 5px">3.</span>Projects</a
-              >
-            </li>
-            <li>
-              <a href="#Contact"
-                ><span style="padding-right: 5px">4.</span>Contact</a
-              >
-            </li>
-            <li>
-              <a href="#Resume"
-                ><span style="padding-right: 5px">5.</span>Other</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <!-- Hamburger Icon -->
+      <button class="hamburger" id="hamburger-menu">&#9776;</button>
 
-      <!-- Main Content -->
-      <main>
-        <section id="Home" class="fullscreen-section">
-          <p0>Alex Ferdico</p0>
-          <p>
-            Welcome to my website! I am thrilled to have you here. While
-            exploring this site, I hope you learn more about me.
-          </p>
-          <p1>Your description goes here.</p1>
-          <p2>Your description goes here.</p2>
-        </section>
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#Home"><span>0.</span> Home</a></li>
+        <li><a href="#About"><span>1.</span> About</a></li>
+        <li><a href="#Skills"><span>2.</span> Skills</a></li>
+        <li><a href="#Projects"><span>3.</span> Projects</a></li>
+        <li><a href="#Contact"><span>4.</span> Contact</a></li>
+        <li><a href="#Resume"><span>5.</span> Resume</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="About" class="fullscreen-section">
-          <h2>About Me</h2>
-          <p3>Information about your business or purpose.</p3>
-        </section>
+  <!-- Main content -->
+  <main>
+    <section id="Home" class="section" style="background:#000000a4;">
+      <h1>Welcome to My Website</h1>
+      <p>I am thrilled to have you here. While exploring this site, I hope you learn more about me.</p>
+    </section>
 
-        <section id="Skills" class="fullscreen-section">
-          <h2>My Services</h2>
-          <div class="grid">
-            <div class="card">Service 1</div>
-            <div class="card">Service 2</div>
-            <div class="card">Service 3</div>
-          </div>
-        </section>
+    <section id="About" class="section" style="background:#000000;">
+      <h2>About Me</h2>
+      <p>Information about your business or purpose.</p>
+    </section>
 
-        <section id="Projects" class="fullscreen-section">
-          <h3>My Projects</h3>
-        </section>
+    <section id="Skills" class="section" style="background:#000000;">
+      <h2>My Skills</h2>
+      <p>Describe your skills here.</p>
+    </section>
 
-        <section id="Contact" class="fullscreen-section">
-          <h4>Contact Me</h4>
-          <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            <button type="submit">Submit</button>
-          </form>
-        </section>
+    <section id="Projects" class="section" style="background:#000000;">
+      <h2>Projects</h2>
+      <p>Some of my projects:</p>
+      
+    </section>
 
-        <section id="Resume" class="fullscreen-section">
-          <h5>Other</h5>
-          <footer>
-            <p4>&copy 2025 Alex Ferdico. All Rights Reserved</p4>
-          </footer>
-        </section>
+    <section id="Contact" class="section" style="background:#000000;">
+      <h2>Contact Me</h2>
+      <p>Reach out to me here.</p>
+      <form>
+        <label for="proj-name">Name:</label>
+        <input type="text" id="proj-name" name="name" required />
 
-        <!-- Footer should be inside the main content, right after the last section -->
-      </main>
-    </div>
+        <label for="proj-email">Email:</label>
+        <input type="email" id="proj-email" name="email" required />
 
-    <!-- External JS -->
-    <script src="main.js"></script>
-  </body>
+        <button>Submit</button>
+      </form>
+    </section>
+
+    <section id="Resume" class="section" style="background:#000000;">
+      <h2>Resume</h2>
+      <p>Download or view my resume here.</p>
+    </section>
+  </main>
+<!-- Scroll Dots -->
+<div class="scroll-dots">
+  <div class="dot active" data-target="Home"></div>
+  <div class="dot" data-target="About"></div>
+  <div class="dot" data-target="Skills"></div>
+  <div class="dot" data-target="Projects"></div>
+  <div class="dot" data-target="Contact"></div>
+  <div class="dot" data-target="Resume"></div>
+</div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Alex Ferdico. All Rights Reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>

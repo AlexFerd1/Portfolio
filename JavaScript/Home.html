@@ -13,14 +13,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="/css/Home.css" />
   <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico" />
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.28/build/spline-viewer.js"></script> <!-- spline-->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.28/build/spline-viewer.js"></script> <!-- spline Blob-->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.29/build/spline-viewer.js"></script>  <!-- spline Nebula-->
 </head>
 <body>
 
 
-<!-- Spline 3D Background -->
+<!-- Spline 3D Background Blob -->
 <div class="spline-container">
   <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/DAfOz-HSjvbMttZV/scene.splinecode"></spline-viewer>
+</div>
+
+<!-- Spline 3D Background Nebula -->
+<div class="spline-container1">
+  <spline-viewer loading-anim-type="Nebula" url="https://prod.spline.design/0CiGop-E6om4WZE7/scene.splinecode"></spline-viewer>
 </div>
 
 <!-- Navbar / Header -->
@@ -78,7 +84,7 @@
   <p5>Any Questions? Don't hesitate to reach out!</p5>
 
   <form>
-    <label for="proj-name">Name:</label>
+    <label for="proj-name">Name/Company:</label>
     <input type="text" id="proj-name" name="name" required />
 
     <label for="proj-email">Email:</label>
@@ -135,7 +141,8 @@
   </footer>
 <!-- Neon cursor element -->
   <canvas id="neon-trail"></canvas>
-  <canvas id="canvas3d"></canvas> <!-- Interactive 3D Blob -->
+  <canvas id="canvas3dBlob"></canvas> <!-- Interactive 3D Blob -->
+  <canvas id="canvas3dNebula"></canvas> <!-- Interactive 3D Nebula -->
   <script src="main.js"></script>
   <script type="module" src="spline.js"></script>
 </body>

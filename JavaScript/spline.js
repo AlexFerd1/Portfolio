@@ -69,7 +69,7 @@ if (canvas1) {
     const dy = e.clientY - cy;
     const dist = Math.sqrt(dx*dx + dy*dy);
 
-    if(dist < 400){  // only zoom if cursor is within 200px of blob center
+    if(dist < 200){  // only zoom if cursor is within 200px of blob center
       e.preventDefault(); // prevent page scroll
       targetZoom += e.deltaY * 0.001;  // adjust sensitivity
       targetZoom = Math.max(2, Math.min(10, targetZoom)); // clamp zoom

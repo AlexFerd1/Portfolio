@@ -772,11 +772,15 @@ html,body
   top:40%;
 }
 
-.skills-hover:hover
+.icon-cplusplus
 {
-  color:#ff00aa
+  position: absolute;
+  left:34.5%;
+  top: 35%;
+  clip-path: circle();
+  width: 5%;
+  height: 5%;
 }
-
 .hover-text:hover
 {
   color: #ff00b3;

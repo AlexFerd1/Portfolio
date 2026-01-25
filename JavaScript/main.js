@@ -129,3 +129,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animate();
 });
+
+
+const canvas = document.querySelector("#Skills .skills-energy");
+const ctx = canvas.getContext("2d");
+
+
+function resize() {
+const section = document.getElementById("Skills");
+canvas.width = section.clientWidth;
+canvas.height = section.clientHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+
+function branch(x, y, length, angle, depth) {
+if (depth === 0) return;
+
+
+const x2 = x + Math.cos(angle) * length;
+const y2 = y + Math.sin(angle) * length;
+
+
+ctx.beginPath();
+ctx.moveTo(x, y);
+ctx.lineTo(x2, y2);
+ctx.stroke();
+
+
+const newLength = length * (0.75 + Math.random() * 0.2);
+
+
+branch(x2, y2, newLength, angle - Math.random() * 0.6, depth - 1);
+branch(x2, y2, newLength, angle + Math.random() * 0.6, depth - 1);
+}
+
+
+function draw() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+ctx.globalCompositeOperation = "lighter";
+ctx.lineWidth = 2;
+ctx.strokeStyle = "rgba(180,220,255,0.7)";
+ctx.shadowBlur = 30;
+ctx.shadowColor = "rgba(180,220,255,1)";
+
+
+const startX = canvas.width * 0.5;
+const startY = canvas.height * 0.9;
+const time = Date.now() * 0.002;
+
+
+branch(
+startX,
+startY,
+canvas.height * 0.35,
+-Math.PI / 2 + Math.sin(time) * 0.05,
+7
+);
+
+
+requestAnimationFrame(draw);
+}
+
+
+draw();
+
+

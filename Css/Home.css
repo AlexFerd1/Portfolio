@@ -26,7 +26,11 @@ html, body
 {
   margin: 0;
   padding: 0;
+  background: radial-gradient(circle at center, #020617, #000);/*Possibly Remove*/
+  height: 100vh;
+  display: grid;
 }
+
 
 #neon-trail 
 {
@@ -64,6 +68,566 @@ html,body
  
 }
 
+#loader
+ {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: #e6d8a8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2147483647; /* on top of everything */
+}
+
+#glyph-decoder 
+{
+  font-family: "Noto Sans Egyptian Hieroglyphs", "Segoe UI Symbol", serif;
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+  text-shadow: 0 0 12px rgba(230,216,168,0.4);
+}
+
+.glyph-sub 
+{
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-family: system-ui, sans-serif;
+  opacity: 0.7;
+}
+
+.glyph-coords 
+{
+  margin-top: 0.5rem;
+  font-family: ui-monospace, monospace;
+  font-size: 2rem;
+  letter-spacing: 0.12rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.black-box-nebula 
+{
+  position: absolute;          /* stays on screen */
+  top: 95%;
+  left: 95%;
+  width: 5%;             /* full viewport width */
+  height:5%;            /* full viewport height */
+  background: linear-gradient(#020617, #000);  /* black color */
+  opacity: 1;             /* slightly see-through */
+  z-index: 1;            /* on top of everything else */
+}
+
+.black-box-blob 
+{
+  position: absolute;          /* stays on screen */
+  top: 189%;
+  left: 98%;
+  width: 5%;             /* full viewport width */
+  height:5%;            /* full viewport height */
+  background-color: #020617, #000;  
+  opacity: 1;             /* slightly see-through */
+  z-index: 1;            /* on top of everything else */
+}
+
+.arrow-container
+ {
+  position: absolute;
+  width: 1200px;
+  height: 400px;
+}
+
+/* Curved line */
+.curve1
+{
+  position: absolute;
+  border: 2px solid #ffffff;
+	border-color: transparent transparent transparent #ffffff;
+	height: 360px;
+	width: 1200px;
+	border-radius: 230px 0 0 150px;
+  top: 250%;
+  left: 30%;
+  transform: rotate(-60deg);
+}
+
+/* Arrow tips */
+.arrow-tip1 
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  transform: rotate(135deg);
+  transform-origin: center;
+}
+
+/* Positioning each arrow tip manually along the curve */
+.arrow-tip1:nth-child(2) 
+{ /* first tip */
+  top: 430.5%;
+  left: 65%;
+}
+
+/* Curved line */
+.curve2
+{
+  position: absolute;
+  border: 2px solid #ffffff;
+	border-color: transparent transparent transparent #ffffff;
+	height: 360px;
+	width: 1200px;
+	border-radius: 230px 0 0 150px;
+  top: 305%;
+  left: 50%;
+  transform: rotate(-60deg);
+}
+
+/* Arrow tips */
+.arrow-tip2 
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  transform: rotate(135deg);
+  transform-origin: center;
+  top: 485.5%;
+  left: 85%;
+}
+
+/* Positioning each arrow tip manually along the curve */
+.arrow-tip2:nth-child(3) 
+{ 
+  top: 500%;
+  left: 65%;
+}
+
+/* Curved line */
+.curve3
+{
+  position: absolute;
+  border: 2px solid #ffffff;
+	border-color: transparent transparent transparent #ffffff;
+	height: 360px;
+	width: 1200px;
+	border-radius: 230px 0 0 150px;
+  top: 365%;
+  left: 80%;
+  transform: rotate(-70deg);
+}
+
+/* Arrow tips */
+.arrow-tip3 
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  transform: rotate(135deg);
+  transform-origin: center;
+  top: 550.5%;
+  left: 123.2%;
+}
+
+/* Positioning each arrow tip manually along the curve */
+.arrow-tip3:nth-child(3) 
+{ 
+  top: 500%;
+  left: 65%;
+}
+
+#Skills 
+{
+position: relative;
+overflow: hidden; /* re-enable after positioning */
+}
+
+.skills-bar
+{
+  position: absolute;
+  background-color: white;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  width: 2500px;
+  height: 1.1em;
+  border-radius: 1.5rem;
+  top: 805%;
+  left: 35%;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow 
+{
+0%, 100% {
+filter:
+drop-shadow(0 0 2px rgba(255,255,255,0.5))
+drop-shadow(0 0 8px rgba(255,255,255,0.4))
+drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+50% {
+filter:
+drop-shadow(0 0 8px rgba(255,255,255,1))
+drop-shadow(0 0 12px rgba(255,255,255,0.8))
+drop-shadow(0 0 15px rgba(255,255,255,0.6));
+}
+}
+
+.timeline-branch1 
+{
+position: absolute;
+top: 32%;
+left: 11%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch1 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+
+.timeline-branch2 
+{
+position: absolute;
+top: 32%;
+left: 17%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch2 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+
+.timeline-branch3 
+{
+position: absolute;
+top: 32%;
+left: 24%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch3 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch4 
+{
+position: absolute;
+top: 32%;
+left: 31%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch4 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch5 
+{
+position: absolute;
+top: 32%;
+left: 39%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch5 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch6 
+{
+position: absolute;
+top: 32%;
+left: 47.7%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch6 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+
+.timeline-branch7 
+{
+position: absolute;
+top: 32%;
+left: 57%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+}
+
+.timeline-branch7 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch8 
+{
+position: absolute;
+top: 54%;
+left: 15%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch8 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch9 
+{
+position: absolute;
+top: 54%;
+left: 22%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch9 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+
+.timeline-branch10 
+{
+position: absolute;
+top: 54%;
+left: 30%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch10 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+
+.timeline-branch11 
+{
+position: absolute;
+top: 54%;
+left: 37%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch11 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch12 
+{
+position: absolute;
+top: 54%;
+left: 46%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch12 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch13 
+{
+position: absolute;
+top: 54%;
+left: 55%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch13 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 14px #ffffff);
+animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.timeline-branch14 
+{
+position: absolute;
+top: 54%;
+left: 65%;
+width: 600px;
+height: auto;
+pointer-events: none;
+z-index: 3;
+transform: rotate(270deg);
+}
+
+.timeline-branch14 path
+ {
+stroke: #ffffff;
+stroke-width: 8;
+fill: none;
+stroke-linecap: round;
+filter:
+drop-shadow(0 0 6px #ffffff)
+drop-shadow(0 0 10px #ffffff);
+animation: pulse-glow1 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow1 
+{
+0%, 100% {
+filter:
+drop-shadow(0 0 2px rgba(255,255,255,0.5))
+drop-shadow(0 0 8px rgba(255,255,255,0.4))
+drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+50% {
+filter:
+drop-shadow(0 0 8px rgba(255,255,255,1))
+drop-shadow(0 0 12px rgba(255,255,255,0.8))
+drop-shadow(0 0 15px rgba(255,255,255,0.6));
+}
+}
+
+
 .section h1 /*Home*/
 {
   position: absolute;
@@ -74,7 +638,7 @@ html,body
   margin: 0.5rem auto; 
   z-index: 1;  
   left:12%;
-  top:2%;
+  top:1%;
 } 
 
 
@@ -82,13 +646,42 @@ html,body
 {
   position: absolute;
   font-weight: bold;
+  font-size: 70px;
   font-family: 'Courier New', Courier, monospace;
-  color: #2d16af;
+  color: #ffffff;
+  text-align: center;
+  max-width: 600px;                    
+  margin: 0.5rem auto; 
+  left:15%;
+  top:15%;
+}
+
+.section h3 /*Skills*/
+{
+ position: absolute;
+  font-weight: bold;
+  font-size: 70px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  text-align: center;
+  max-width: 600px;                    
+  margin: 0.5rem auto; 
+  left:10%;
+  top:10%;
+}
+
+.section h4/*Projects*/
+{
+  position: absolute;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #471717;
   text-align: center;
   max-width: 600px;                    
   margin: 0.5rem auto; 
   left:20%;
-  top:20%;
+  top:30%;
+
 }
 
 .section h5 /*Contact*/
@@ -102,7 +695,7 @@ html,body
   max-width: 600px;                    
   margin: 0.5rem auto; 
   z-index: 1;     
-  left:20%;
+  left:10%;
   top:20%;
 }
 
@@ -115,11 +708,11 @@ html,body
   max-width: 600px;                    
   margin: 0.5rem auto;
   z-index: 1;   
-  left:64%;
-  top:40%;
+  left:40%;
+  top:2%;
 }
 
-.section p1 /*About*/
+.section p1 /*Home*/
 {
   position: absolute;
  /* text-shadow: 0 0 10px #ffffff, 0 0 20px #00ffff, 0 0 30px #00ffff;*/
@@ -130,22 +723,50 @@ html,body
   max-width: 900px;                    
   margin: 0.5rem auto; 
   z-index: 1;     
-  left: 2%;
-  top: 40%;
+  left: 36%;
+  top: 90%;
 }
 
 
-.section p2
+.section p2 /*About*/
 {
   position: absolute;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   color: #ffffff;
   text-align: center;
+  max-width: 900px;                    
+  margin: 0.5rem auto; 
+  left:45%;
+  top:70%;
+}
+
+.section p3/* SKills*/
+{
+  position: absolute;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  text-align: center;
+  max-width: 900px;                    
+  margin: 0.5rem auto; 
+  left:61%;
+  top:39%;
+}
+
+.section p4/*Projects*/
+{
+  position: absolute;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #8d0f9e;
+  text-align: center;
   max-width: 600px;                    
   margin: 0.5rem auto; 
   left:20%;
-  top:40%;
+  top:70%;
+
 }
 
 
@@ -158,8 +779,338 @@ html,body
   text-align: center;
   max-width: 600px;                    
   margin: 0.5rem auto; 
-  left:10%;
-  top:30%;
+  left:8%;
+  top:35%;
+}
+
+.section p6/*About*/
+{
+  position: absolute;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  text-align: center;
+  max-width: 900px;                    
+  margin: 0.5rem auto; 
+  left:24%;
+  top:33%;
+}
+
+.section p7/*About*/
+{
+  position: absolute;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  text-align: center;
+  max-width: 900px;                    
+  margin: 0.5rem auto; 
+  left:32%;
+  top:50%;
+}
+
+
+.section p8/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 25%;
+  top:39%;
+
+}
+
+.section p9/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 31%;
+  top:39%;
+}
+
+.section p10/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #88e4cd;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 38%;
+  top:39%;
+
+}
+
+.section p11/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 45%;
+  top:39%;
+
+}
+
+.section p12/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 53%;
+  top:70%;
+
+}
+
+.section p13/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 61%;
+  top:70%;
+
+}
+
+.section p14/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 72.4%;
+  top:70%;
+
+}
+
+.section p15/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 47.4%;
+  top:70%;
+
+}
+
+.section p16/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left:24.8%;
+  top:70%;
+
+}
+
+.section p17/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 31.8%;
+  top:70%;
+
+}
+
+.section p18/* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 52%;
+  top:39%;
+
+}
+
+.section p19 /* SKills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 70%;
+  top:39%;
+
+}
+
+.section p20 /* Skills*/
+{
+  position: absolute;
+  font-size: 25px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 39.1%;
+  top:70%;
+}
+
+.section p21 /*About*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 83%;
+  top:60%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.icon-cplusplus
+{
+  position: absolute;
+  left:21.2%;
+  top: 22.5%;
+  transform: scale(.25);
+  user-select: none;
+}
+
+
+.icon-python
+{
+  position: absolute;
+  transform: scale(.05);
+  left:35.2%;
+  top: -44.5%; 
+  user-select: none;
+}
+
+.icon-html
+{
+  position: absolute;
+  transform: scale(.09);
+  left:21.4%;
+  top: -12.2%;
+  user-select: none;
+}
+
+.icon-css 
+{
+  position: absolute;
+  transform: scale(.055);
+  left:-10.1%;
+  top: -50%;
+  user-select: none;
+}
+
+.icon-java
+{
+  position: absolute;
+  transform: scale(.5);
+  left:27.2%;
+  top: 21.8%;
+  user-select: none;
+}
+
+.icon-javascript
+{
+  position: absolute;
+  transform: scale(.05);
+  left:-2%;
+  top: -49.9%;
+  user-select: none;
+}
+
+.icon-mediapipe
+{
+  position: absolute;
+  transform: scale(.45);
+  left:68.2%;
+  top: 26.5%;
+  user-select: none;
+}
+
+.icon-pytorch
+{
+  position: absolute;
+  transform: scale(.06);
+  left:11.6%;
+  top: 30%;
+  user-select: none;
+}
+
+.icon-opencv
+{
+  position: absolute;
+  transform: scale(.3);
+  left:24.4%;
+  top: 66.2%;
+  user-select: none;
+}
+
+.icon-tensorflow
+{
+  position: absolute;
+  transform: scale(.17);
+  left:33.6%;
+  top: 57.8%;
+  user-select: none;
+}
+
+.icon-cad
+{
+  position: absolute;
+  transform: scale(.25);
+  left:43.5%;
+  top: 65.5%;
+  user-select: none;
+}
+
+.icon-ai
+{ 
+  position: absolute;
+  transform: scale(.12);
+  left:45.5%;
+  top: 47.2%;
+  user-select: none;
+}
+
+.icon-cfd
+{
+  position: absolute;
+  transform: scale(.2);
+  left:51.5%;
+  top: 55%;
+  user-select: none;
+}
+
+.icon-fea
+{
+  position: absolute;
+  transform: scale(.25);
+  left:66.5%;
+  top: 62.2%;
+  user-select: none;
+}
+
+
+#Projects
+{
+  position: relative;   /* make it the reference for absolute positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
 }
 
 /* Contact section container */
@@ -176,7 +1127,7 @@ html,body
 #Contact .social-forms 
 {
   position: absolute;    /* relative to #Contact */
-  top: 50%;             /* distance from top of Contact section */
+  top: 65%;             /* distance from top of Contact section */
   left: 10%;            /* distance from left */
   display: flex;
   flex-direction: column;
@@ -228,21 +1179,9 @@ html,body
 }
 
 
-
-.scroll-dots
-{
-  position: fixed;
-  top: 50%;
-  right: 20px; /* distance from right edge */
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 1000;
-}
-
 /* Form container */
-#Contact form {
+#Contact form 
+{
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -250,20 +1189,24 @@ html,body
   padding: 20px;
   background: rgb(0, 0, 0);
   border-radius: 15px;
-  margin-left: 60%;
+  margin-left: 80%;
   box-shadow: 0 0 20px rgba(113, 70, 255, 0.7); /* neon glow */
   color: #fff;
+  left:80%;
 }
 
 /* Labels */
-#Contact form label {
+#Contact form label 
+{
   font-weight: bold;
   margin-bottom: 5px;
+  left:80%;
 }
 
 /* Inputs & Textarea */
 #Contact form input,
-#Contact form textarea {
+#Contact form textarea
+ {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -271,10 +1214,12 @@ html,body
   color: #fff;
   font-size: 2rem;
   width: 100%;
+  left:80%;
 }
 
 /* Button */
-#Contact form button {
+#Contact form button
+ {
  padding: 12px 30px;        /* more padding for pill shape */
   border-radius: 50px;        /* makes it fully rounded */
   border: none;               /* remove default border */
@@ -286,15 +1231,7 @@ html,body
   transition: all 0.3s ease;  /* smooth hover effect */
 }
 
-.dot 
-{
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ffffff; /* inactive dot */
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+
 
 /* Spline 3d Blob*/
 /* Parent sections need relative positioning */
@@ -305,48 +1242,74 @@ html,body
 }
 
 /* Container for 3d Blob */
-.spline-container 
+.spline-blob 
 {
   position: absolute;         /* position relative to section */
-  top: 70%;                   /* vertical center */
-  left: 80%;                  /* horizontal position */
-  width: 80%;                 /* size */
-  height: 40%;
+  top: 160%;                   /* vertical center */
+  left: 66%;                  /* horizontal position */
+  width: 50%;                 /* size */
+  height: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;                 /* behind text */
   pointer-events: auto;       /* allow clicks through */
+  transform: scale(50%);
 }
 
 /* Container for 3d Nebula */
-.spline-container1 
+.spline-nebula
 {
-  position: absolute;         /* position relative to section */
-  top: 50%;                   /* vertical center */
-  left: 50%;                  /* horizontal position */
-  width: 100%;                 /* size */
+  position: absolute;      /* position relative to section or body */
+  top: 50%;
+  left: 50%;
+  width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
-  z-index: 1;                 /* behind text */
-  pointer-events: auto;       /* allow clicks through */
+  transform: translate(-50%, -50%) scale(1); /* combine translate + scale */
+  z-index: 1;
+  pointer-events: auto;   /* allow interactions */
 }
 
-
-.dot.active {
-   background: linear-gradient(to bottom right, #008cff,#e100ff);
-  /*background-color: #ff0000; /* bright yellow for active section */
-}
-
-.dot:hover
+.scroll-dots 
 {
-   background-image: linear-gradient(to bottom right, #ff6f00, #fff100);
-  -webkit-text-fill-color: transparent; /* shows the gradient */
-  color: transparent;                   /* fallback */
-  text-decoration: none;
+position: fixed;
+right: 20px;
+top: 50%;
+transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+gap: 12px;
+z-index: 100;
+}
+
+
+.scroll-dots .dot 
+{
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background-color: #ffffff; /* inactive color */
+transition: all 0.3s ease;
+}
+
+
+/* Active dot with gradient */
+.scroll-dots .dot.active
+{
+background: linear-gradient(to bottom right, #008cff, #e100ff);
+transform: scale(1.4); /* optional: bigger active dot */
+}
+
+
+/* Hover effect */
+.scroll-dots .dot:hover
+{
+background: linear-gradient(to bottom right, #ff6f00, #fff100);
+cursor: pointer;
+transform: scale(1.3); /* slightly bigger on hover */
 }
 
 main 
 {
- flex: 1;
+  flex: 1;
   /* remove height: 100vh */
   overflow-y: hidden;             /* enable scrolling */
   scroll-snap-type: y mandatory;
@@ -359,13 +1322,12 @@ main
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1; /* above all content */
+  z-index: 2; /* above all content */
   background-color: #00000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .nav-list 
@@ -772,9 +1734,14 @@ html,body
   top:40%;
 }
 
-.skills-hover:hover
+.icon-cplusplus
 {
-  color:#ff00aa
+  position: absolute;
+  left:34.5%;
+  top: 35%;
+  clip-path: circle();
+  width: 5%;
+  height: 5%;
 }
 
 .hover-text:hover
@@ -1200,7 +2167,7 @@ html,body
 }
 
 /* Container for 3d Nebula */
-.spline-container1 
+.spline-container1
 {
   position: absolute;         /* position relative to section */
   top: 50%;                   /* vertical center */

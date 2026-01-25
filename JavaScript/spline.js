@@ -1,8 +1,4 @@
-//import { Application } from '@splinetool/runtime';
 
-//const canvas = document.getElementById('canvas3d');
-//const app = new Application(canvas);
-//app.load('https://prod.spline.design/DAfOz-HSjvbMttZV/scene.splinecode');
 
 import { Application } from '@splinetool/runtime';
 
@@ -10,7 +6,6 @@ const canvas = document.getElementById('canvas3dBlob'); /* BLob*/
 
 
 const canvas1 = document.getElementById('canvas3dNebula'); /*Nebula*/
-
 
 
 if (canvas) {
@@ -52,9 +47,11 @@ if (canvas) {
   animate();
 }
 
+
 if (canvas1) {
-  const app = new Application(canvas);
-  app.load('https://prod.spline.design/0CiGop-E6om4WZE7/scene.splinecode');
+  const app = new Application(canvas1);
+  await blobApp.load('https://prod.spline.design/0CiGop-E6om4WZE7/scene.splinecode');
+  app.load('hhttps://prod.spline.design/0CiGop-E6om4WZE7/scene.splinecode');
 
   // --- Camera zoom setup ---
   let targetZoom = 5; // desired camera z

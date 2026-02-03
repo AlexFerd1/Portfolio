@@ -73,7 +73,7 @@ html,body
   position: fixed;
   inset: 0;
   background: black;
-  color: #e6d8a8;
+  color: #D4AF37;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,7 +86,7 @@ html,body
   font-family: "Noto Sans Egyptian Hieroglyphs", "Segoe UI Symbol", serif;
   font-size: 3rem;
   letter-spacing: 0.25rem;
-  text-shadow: 0 0 12px rgba(230,216,168,0.4);
+  text-shadow: 0 0 12px #D4AF37;
 }
 
 .glyph-sub 

@@ -1,4 +1,4 @@
-// Decipher Loading Screen — Unicode-safe & failproof
+// Decipher Loading Screen — random final logos, no race conditions
 
 document.addEventListener("DOMContentLoaded", () => {
   const homeSection = document.getElementById("Home");
@@ -9,33 +9,51 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!loader || !target) return;
 
   // ----- CONFIG -----
-  const FINAL_MESSAGE = Array.from("𓂀 𓊹 𓋹"); // Unicode-safe
-  const GLYPH_POOL = ["𓂀","𓊹","𓋹","𓆣","𓀀","𓏏","𓎛","𓐍","𓇋","𓄿"];
-  const SCRAMBLE_SPEED = 40;
+  const GLYPH_POOL = [
+    "𓂀","𓊹","𓋹","𓆣","𓀀",
+    "𓏏","𓎛","𓐍","𓇋","𓄿"
+  ];
+
+  const LOGO_COUNT = 3;
+  const SCRAMBLE_SPEED = 50;
   const LOCK_SPEED = 180;
 
-  let revealed = 0;
+  let revealed = -1;
+  let lastGlyph = null;
+
+  // ----- HELPERS -----
+  function randomGlyph(exclude) {
+    let g;
+    do {
+      g = GLYPH_POOL[Math.floor(Math.random() * GLYPH_POOL.length)];
+    } while (g === exclude || g === lastGlyph);
+
+    lastGlyph = g;
+    return g;
+  }
+
+  function buildFinalMessage() {
+    const result = [];
+    for (let i = 0; i < LOGO_COUNT; i++) {
+      result.push(randomGlyph());
+      if (i < LOGO_COUNT - 1) result.push(" ");
+    }
+    return result;
+  }
+
+  const FINAL_MESSAGE = buildFinalMessage();
 
   // Jump to Home immediately
-  if (homeSection) {
-    homeSection.scrollIntoView({ behavior: "auto" });
-  }
+  homeSection?.scrollIntoView({ behavior: "auto" });
 
-  function randomGlyph() {
-    return GLYPH_POOL[Math.floor(Math.random() * GLYPH_POOL.length)];
-  }
-
+  // ----- RENDER -----
   function render() {
     let output = "";
 
     for (let i = 0; i < FINAL_MESSAGE.length; i++) {
-      if (i < revealed) {
-        output += FINAL_MESSAGE[i];
-      } else if (FINAL_MESSAGE[i] === " ") {
-        output += " ";
-      } else {
-        output += randomGlyph();
-      }
+      output += i <= revealed
+        ? FINAL_MESSAGE[i]
+        : randomGlyph(FINAL_MESSAGE[i]);
     }
 
     target.textContent = output;
@@ -43,31 +61,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrambleInterval = setInterval(render, SCRAMBLE_SPEED);
 
-  const revealInterval = setInterval(() => {
-    revealed++;
+  // Delay reveal so scrambling is always visible
+  setTimeout(() => {
+    const revealInterval = setInterval(() => {
+      revealed++;
 
-    if (revealed >= FINAL_MESSAGE.length) {
-      clearInterval(scrambleInterval);
-      clearInterval(revealInterval);
+      if (revealed >= FINAL_MESSAGE.length - 1) {
+        clearInterval(scrambleInterval);
+        clearInterval(revealInterval);
 
-      target.textContent = FINAL_MESSAGE.join("");
+        target.textContent = FINAL_MESSAGE.join("");
 
-      // Show coordinates
-      if (coords) coords.style.opacity = "0.6";
+        if (coords) coords.style.opacity = "0.6";
 
-      // Kill any CSS animation + fade out loader
-      setTimeout(() => {
-        loader.style.animation = "none";
-        loader.style.transition = "opacity 0.6s ease";
-        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.animation = "none";
+          loader.style.transition = "opacity 0.6s ease";
+          loader.style.opacity = "0";
 
-        setTimeout(() => loader.remove(), 600);
-      }, 2000);
-    }
-  }, LOCK_SPEED);
+          setTimeout(() => loader.remove(), 800);
+        }, 2000);
+      }
+    }, LOCK_SPEED);
+  }, SCRAMBLE_SPEED);
 
   // ----- FAILSAFE -----
-  // Loader can NEVER get stuck
   setTimeout(() => {
     if (document.body.contains(loader)) {
       loader.remove();

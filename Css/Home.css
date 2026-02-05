@@ -1345,6 +1345,7 @@ main
 
 .logo-img
  {
+  display: hidden;;
   width: 125px;
   height: 125px;
 }

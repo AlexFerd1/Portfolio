@@ -80,7 +80,7 @@
     </section>
     <section id="About" class="section">
       <h2 class ="noselect">About</h2>
-      <p2 class ="noselect">Im a very hands on person from working on cars to dirt bikes, quads and motorcycles. I also play guitar and eventually want to learn the bass and drums. </p2>
+      <p2 class ="noselect">Currently the President for the PEP E-board commission. Also currently leader for the Autonomus Boat for the 2026-2027 PEP competition. </p2>
       <p6 class ="noselect">I'm currently going to University at Buffalo for Mechanical and Aerospace Engineering.</p6>
       <p7 class ="noselect">After graduation, I plan to work in the Aerospace sector and eventually advance into Robotics.</p7>
       <p21 class = "noselect">Interact with the model below!</p21>
@@ -191,18 +191,25 @@
   <h5 class ="noselect">Contact:</h5>
   <p5 class ="noselect">Any Questions? Don't hesitate to reach out!</p5>
 
-  <form>
-    <label for="proj-name" class ="noselect">Name/Company:</label>
-    <input type="text" id="proj-name" name="name" required />
-
-    <label for="proj-email" class ="noselect">Email:</label>
-    <input type="email" id="proj-email" name="email" required />
-
-    <label for="proj-message" class ="noselect">Message:</label>
-    <textarea id="proj-message" name="message" required></textarea>
-
-    <button>Submit</button>
-  </form>
+<form
+  action="https://formspree.io/f/xjglzyjy"
+  method="POST"
+>
+<label>
+  Your name: 
+   <input type="text" name="name">
+</label>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
 
   <!-- Social links -->
   <ul class="social-forms">

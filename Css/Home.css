@@ -1200,6 +1200,15 @@ drop-shadow(0 0 15px rgba(255,255,255,0.6));
   left:80%;
 }
 
+/* Contact form font size*/
+#Contact .contact-form input,
+#Contact .contact-form textarea 
+{
+  font-size: 10px !important;
+  padding: 4px 6px !important;
+  line-height: 1.2;
+}
+
 /* Labels */
 #Contact form label 
 {
@@ -1217,7 +1226,7 @@ drop-shadow(0 0 15px rgba(255,255,255,0.6));
   border: 1px solid #ccc;
   background-color: #111;
   color: #fff;
-  font-size: 2rem;
+  font-size: 18px;
   width: 100%;
   left:80%;
 }
@@ -2121,7 +2130,7 @@ html,body
   border: 1px solid #ccc;
   background-color: #111;
   color: #fff;
-  font-size: 2rem;
+  font-size: 14px;
   width: 100%;
 }
 
@@ -2132,7 +2141,7 @@ html,body
   border: none;               /* remove default border */
   background-color: #121258;
   color: #fff;                /* white text */
-  font-size: 1rem;
+  font-size: 14px;;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;  /* smooth hover effect */

@@ -2,9 +2,9 @@
    MAIN APP SCRIPT (SAFE VERSION)
    ================================ */
 
-   console.log("MAIN.JS LOADED");
-document.addEventListener("DOMContentLoaded", () => {
+console.log("MAIN.JS LOADED");
 
+document.addEventListener("DOMContentLoaded", () => {
   /* ---------- GLOBAL STATE ---------- */
   const body = document.body;
   const isLoading = () => body.classList.contains("loading");
@@ -27,14 +27,22 @@ document.addEventListener("DOMContentLoaded", () => {
     sections[index].scrollIntoView({ behavior: "smooth" });
     currentSectionIndex = index;
 
-    setTimeout(() => (isScrolling = false), 700);
+    setTimeout(() => {
+      isScrolling = false;
+    }, 700);
   }
 
   window.addEventListener(
     "wheel",
     (e) => {
       if (isLoading() || isScrolling) return;
-      e.deltaY > 0 ? currentSectionIndex++ : currentSectionIndex--;
+
+      if (e.deltaY > 0) {
+        currentSectionIndex++;
+      } else {
+        currentSectionIndex--;
+      }
+
       scrollToSection(currentSectionIndex);
     },
     { passive: true }
@@ -71,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       if (isLoading()) return;
+
       const target = document.getElementById(dot.dataset.target);
       target?.scrollIntoView({ behavior: "smooth" });
     });
@@ -78,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- NEON CURSOR TRAIL ---------- */
   const trailCanvas = document.getElementById("neon-trail");
+
   if (trailCanvas) {
     const ctx = trailCanvas.getContext("2d");
 
@@ -85,15 +95,23 @@ document.addEventListener("DOMContentLoaded", () => {
       trailCanvas.width = window.innerWidth;
       trailCanvas.height = window.innerHeight;
     }
+
     window.addEventListener("resize", resizeTrail);
     resizeTrail();
 
     const trail = [];
     const trailLength = 30;
-    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    const mouse = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+    };
 
     for (let i = 0; i < trailLength; i++) {
-      trail.push({ x: mouse.x, y: mouse.y });
+      trail.push({
+        x: mouse.x,
+        y: mouse.y,
+      });
     }
 
     document.addEventListener("mousemove", (e) => {
@@ -110,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trail.forEach((point) => {
         point.x += (x - point.x) * 0.25;
         point.y += (y - point.y) * 0.25;
+
         x = point.x;
         y = point.y;
       });
@@ -117,10 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
 
       for (let i = 1; i < trail.length; i++) {
-        ctx.strokeStyle = `rgba(255,255,255,${i / trail.length})`;
-        ctx.lineWidth = 6;
+        /*
+          i = 1 is closest to the mouse.
+          Larger i values are farther back in the trail.
+          So fade must decrease as i increases.
+        */
+        const fade = 1 - i / trail.length;
+
+        ctx.strokeStyle = `rgba(255, 255, 255, ${fade})`;
+        ctx.lineWidth = 7 * fade;
         ctx.shadowColor = "white";
-        ctx.shadowBlur = 15;
+        ctx.shadowBlur = 20 * fade;
         ctx.lineCap = "round";
 
         ctx.beginPath();
@@ -142,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function resizeSkills() {
       const section = document.getElementById("Skills");
       if (!section) return;
+
       skillsCanvas.width = section.clientWidth;
       skillsCanvas.height = section.clientHeight;
     }
@@ -171,9 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       ctx.globalCompositeOperation = "lighter";
       ctx.lineWidth = 2;
-      ctx.strokeStyle = "rgba(180,220,255,0.7)";
+      ctx.strokeStyle = "rgba(180, 220, 255, 0.7)";
       ctx.shadowBlur = 30;
-      ctx.shadowColor = "rgba(180,220,255,1)";
+      ctx.shadowColor = "rgba(180, 220, 255, 1)";
 
       const startX = skillsCanvas.width * 0.5;
       const startY = skillsCanvas.height * 0.9;
@@ -192,4 +219,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     drawSkills();
   }
+  
+    /* ---------- CONTACT FORM ---------- */
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          formStatus.textContent = "Message sent successfully!";
+          contactForm.reset();
+        } else {
+          formStatus.textContent = "Something went wrong. Please try again.";
+        }
+      } catch (error) {
+        formStatus.textContent = "Network error. Please try again.";
+      }
+    });
+  }
+
 });

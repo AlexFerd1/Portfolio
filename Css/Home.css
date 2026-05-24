@@ -688,12 +688,13 @@ drop-shadow(0 0 15px rgba(255,255,255,0.6));
   position: absolute;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
-  color: #471717;
+  color: #ff9393;
+  font-size: 40px;
   text-align: center;
   max-width: 600px;                    
   margin: 0.5rem auto; 
-  left:20%;
-  top:30%;
+  left:8%;
+  top:10%;
 
 }
 
@@ -774,7 +775,7 @@ drop-shadow(0 0 15px rgba(255,255,255,0.6));
   position: absolute;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
-  color: #8d0f9e;
+  color: #e100ff00;
   text-align: center;
   max-width: 600px;                    
   margin: 0.5rem auto; 
@@ -988,6 +989,55 @@ drop-shadow(0 0 15px rgba(255,255,255,0.6));
   left: 83%;
   top:60%;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.section p22 /*Projects*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #ff0000;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 15%;
+  top:35%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.section p23 /*Projects*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #05ff8a;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 40%;
+  top:60%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.section p24 /*Projects*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #16ffec;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 60%;
+  top:35%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.section p25 /*Projects*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #ff2b95;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 80%;
+  top:60%;
+  font-family: 'Courier New', Courier, monospace;
+
 }
 
 .icon-cplusplus

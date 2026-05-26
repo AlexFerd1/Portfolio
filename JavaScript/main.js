@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeTrail();
 
     const trail = [];
-    const trailLength = 30;
+    const trailLength = 10;
 
     const mouse = {
       x: window.innerWidth / 2,

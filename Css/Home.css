@@ -1040,6 +1040,241 @@ drop-shadow(0 0 15px rgba(255,255,255,0.6));
 
 }
 
+.section p26 /*Projects*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #f098c4;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 80%;
+  top:60%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#Projects {
+  position: relative;
+  overflow: visible;
+}
+
+/* Projects title */
+#Projects h4 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 70px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  z-index: 10;
+}
+
+/* Subtitle */
+.projects-subtitle {
+  position: absolute;
+  top: 23%;
+  left: 10%;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  z-index: 10;
+}
+
+/* Container holding all dropdowns */
+.projects-dropdown-container {
+  position: absolute;
+  top: 32%;
+  left: 10%;
+
+  width: 550px;
+  height: 600px;
+
+  z-index: 20;
+}
+
+/* Individual dropdown */
+.project-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 550px;
+
+  font-family: 'Courier New', Courier, monospace;
+  filter: url(#goo);
+
+  z-index: 30;
+}
+
+/* Bring opened dropdown above the others */
+.project-dropdown:has(input:checked) {
+  z-index: 100;
+}
+
+/* Project positions */
+.project-1 /*AI Project*/
+{
+  transform: translate(0, 0);
+}
+
+.project-2 /*Guitar*/
+{
+  transform: translate(600px, 425px);
+}
+
+.project-3 /*Portfolio Website*/
+{
+  transform: translate(1300px, -210px);
+}
+
+.project-4 /*Senior Design*/
+{
+  transform: translate(2000px, 425px);
+}
+
+/* Hide checkbox */
+.project-dropdown input {
+  display: none;
+}
+
+/* Project name button */
+.project-dropdown__face {
+  display: block;
+  position: relative;
+
+  background-color: #000000;
+  color: #ffffff;
+
+  padding: 20px 60px 20px 25px;
+  border-radius: 25px;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 0 12px rgba(0, 140, 255, 0.8),
+    0 0 20px rgba(225, 0, 255, 0.5);
+
+  z-index: 2;
+}
+
+/* Project title text */
+.project-dropdown__text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Hidden description box */
+.project-dropdown__items {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+
+  width: 100%;
+
+  background-color: #000000;
+  color: #ffffff;
+
+  padding: 0 25px;
+  border-radius: 25px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  z-index: 1;
+
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    padding 0.3s ease;
+
+  box-shadow:
+    0 0 12px rgba(0, 140, 255, 0.6),
+    0 0 20px rgba(225, 0, 255, 0.4);
+}
+
+/* Open dropdown */
+.project-dropdown input:checked ~ .project-dropdown__items {
+  max-height: 350px;
+  opacity: 1;
+  padding: 20px 25px;
+}
+
+/* Description text */
+#Projects .project-dropdown__description {
+  display: block;
+
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Optional fallback if you still have p tags inside the dropdown */
+#Projects .project-dropdown__items p {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+
+  display: block;
+  max-width: none;
+  margin: 0;
+
+  color: #ffffff !important;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Arrow */
+.project-dropdown__arrow {
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+
+  position: absolute;
+  top: 50%;
+  right: 30px;
+
+  width: 12px;
+  height: 12px;
+
+  transform: rotate(45deg) translateY(-50%);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Arrow opened */
+.project-dropdown input:checked + .project-dropdown__face .project-dropdown__arrow {
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+/* Hide only the goo SVG */
+.goo-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.section p27 /*Projects*/
+{
+  position: absolute;
+  font-size: 30px;
+  color: #07ffc9;
+  max-width: 900px;
+  margin: .5rem auto;
+  left: 80%;
+  top:60%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
 .icon-cplusplus
 {
   position: absolute;

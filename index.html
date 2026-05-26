@@ -15,7 +15,7 @@
   />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="/Css/Home.css" />
-  <link rel="shortcut icon" type="image/ico" href="/Images/favicon.ico"0 />
+  <link rel="shortcut icon" type="image/ico" href="/Images/favicon.ico"/>
  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js"></script> <!--Spline-->
 </head>
 <body>
@@ -86,7 +86,7 @@
       <p21 class = "noselect">Interact with the model below!</p21>
     </section>
 
-    <section id="Skills" class="section" class="energy-section">
+    <section id="Skills" class="section energy-section">
       <!-- TVA Timeline Overlay -->
   <div class="skills-timeline-wrapper">
     <svg class="timeline-branch1"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
@@ -148,7 +148,6 @@
 
   </div>
       <img src="../Images/c++.png" class="icon-cplusplus">
-     <!--<img src="../Images/Fractal.png" class = "icon-fractal"-->
       <img src="../Images/Python-logo.png" class = "icon-python" draggable="false">
       <img src="../Images/html 5.png" class = "icon-html" draggable="false">
       <img src="../Images/css3.png" class = "icon-css" draggable="false">
@@ -180,16 +179,93 @@
       
     </section>
   
+<section id="Projects" class="section">
+  <h4 class="noselect">Projects</h4>
+  <p class="projects-subtitle noselect">Some of my projects:</p>
 
-    <section id="Projects" class="section">
-      <h4 class ="noselect">Projects</h4>
-      <p4 class ="noselect">Some of my projects:</p4>
-      <p22 class = "noselect">AI ASL Detection</p22>
-      <p23 class = "noselect">Custom Guitar</p23>
-      <p24 class = "noselect"> Portfolio Website</p24>
-      <p25 class = "noselect">Senior Design</p25>
-      
-    </section>
+  <div class="projects-dropdown-container">
+
+    <div class="project-dropdown project-1">
+      <input type="checkbox" id="project-ai-asl">
+
+      <label class="project-dropdown__face" for="project-ai-asl">
+        <span class="project-dropdown__text noselect">AI ASL Detection</span>
+        <span class="project-dropdown__arrow"></span>
+      </label>
+
+      <div class="project-dropdown__items">
+        <div class="noselect">
+          Using MediaPipe, TensorFlow, OpenCV, PyTorch, and Python to train a new AI model
+          to recognize ASL hand signals and output to the screen what gesture you are making
+          with either one or both hands.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-dropdown project-2">
+      <input type="checkbox" id="project-guitar">
+
+      <label class="project-dropdown__face" for="project-guitar">
+        <span class="project-dropdown__text noselect">Custom Guitar</span>
+        <span class="project-dropdown__arrow"></span>
+      </label>
+
+      <div class="project-dropdown__items">
+        <div class="noselect">
+          Using a 3D scanner and guitars I own, I will scan two different guitars, import them
+          into CAD, merge the two body styles together, and customize features such as the body
+          shape, hardware, and whammy bar.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-dropdown project-3">
+      <input type="checkbox" id="project-portfolio">
+
+      <label class="project-dropdown__face" for="project-portfolio">
+        <span class="project-dropdown__text noselect">Portfolio Website</span>
+        <span class="project-dropdown__arrow"></span>
+      </label>
+
+      <div class="project-dropdown__items">
+        <div class="noselect">
+          A personal portfolio website built with HTML, CSS, and JavaScript to showcase my
+          engineering, programming, and design projects.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-dropdown project-4">
+      <input type="checkbox" id="project-senior-design">
+
+      <label class="project-dropdown__face" for="project-senior-design">
+        <span class="project-dropdown__text noselect">Senior Design</span>
+        <span class="project-dropdown__arrow"></span>
+      </label>
+
+      <div class="project-dropdown__items">
+        <div class="noselect">
+          Senior design project description goes here.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <svg class="goo-svg" xmlns="http://www.w3.org/2000/svg">
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        result="goo"
+      />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </svg>
+</section>
+
 
     <section id="Contact" class="section">
   <h5 class ="noselect">Contact:</h5>

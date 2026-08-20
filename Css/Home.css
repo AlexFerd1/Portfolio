@@ -3284,12 +3284,872 @@ form
 }
 
 
-@media screen and (min-width: 769px)
+/* =========================================================
+   iPHONE / MOBILE VERSION
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    html,
+   body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        background: #000;
+        -webkit-text-size-adjust: 100%;
+    }
+
+   main {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+    .section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    .curve3,
+    .skills-bar,
+    .icon-css,
+    .icon-javascript {
+        display: none !important;
+    }
+
+    .project-dropdown.project-3,
+    .project-dropdown.project-4 {
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .projects-dropdown-container {
+        width: 100%;
+        max-width: 440px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 15px;
+
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+    }
+
+    .project-dropdown {
+        position: relative !important;
+
+        width: 100%;
+        max-width: 420px;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        transform: none !important;
+    }
+#loader
  {
-  .hamburger {
-    display: none;
-  }
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: #D4AF37;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* on top of everything */
 }
 
+#glyph-decoder 
+{
+  font-family: "Noto Sans Egyptian Hieroglyphs", "Segoe UI Symbol", serif;
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+  text-shadow: 0 0 12px #D4AF37;
+   z-index: 9999; /* on top of everything */
+}
+
+.glyph-sub 
+{
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-family: system-ui, sans-serif;
+  opacity: 0.7;
+  color: #D4AF37;
+   z-index: 9999; /* on top of everything */
+}
+
+.glyph-coords 
+{
+  margin-top: 0.5rem;
+  font-family: ui-monospace, monospace;
+  font-size: 2rem;
+  letter-spacing: 0.12rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+  color: #D4AF37;
+   z-index: 9999; /* on top of everything */
+}
+
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        padding: 10px 16px;
+        z-index: 10000;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+        display: block;
+    }
+
+    /* Hamburger */
+
+    .hamburger {
+        display: flex !important;
+        position: relative;
+        z-index: 10001;
+
+        width: 42px;
+        height: 42px;
+
+        align-items: center;
+        justify-content: center;
+
+        color: #fff;
+        background: transparent;
+        border: none;
+
+        font-size: 28px;
+        cursor: pointer;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-links {
+        position: fixed;
+
+        top: 60px;
+        right: 0;
+
+        width: 100%;
+        max-height: 0;
+
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        transition:
+            max-height 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    /* Use this class if your JS adds .active */
+
+    .nav-links.active {
+        max-height: 400px;
+        padding: 15px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+
+        padding: 14px 20px;
+
+        font-size: 18px;
+    }
+
+
+    /* =====================================================
+       HEADINGS
+       ===================================================== */
+
+    .section h1,
+    .section h2,
+    .section h3,
+    .section h4,
+    .section h5 {
+        position: relative;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 0 25px;
+
+        text-align: center;
+
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .section h1 {
+        font-size: clamp(32px, 9vw, 48px);
+    }
+
+    .section h2 {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+    .section h3 {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+    .section h4 {
+        font-size: clamp(30px, 8vw, 44px);
+        color: #fff;
+    }
+
+    .section h5 {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+
+    /* =====================================================
+       GENERAL TEXT
+       ===================================================== */
+
+    .section p,
+    .section p1,
+    .section p2,
+    .section p3,
+    .section p4,
+    .section p5,
+    .section p6,
+    .section p7,
+    .section p8,
+    .section p9,
+    .section p10,
+    .section p11,
+    .section p12,
+    .section p13,
+    .section p14,
+    .section p15,
+    .section p16,
+    .section p17,
+    .section p18,
+    .section p19,
+    .section p20,
+    .section p21,
+    .section p22,
+    .section p23,
+    .section p24,
+    .section p25,
+    .section p26,
+    .section p27 {
+
+        position: relative;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 10px 0;
+
+        text-align: center;
+
+        font-size: clamp(16px, 4.5vw, 22px);
+
+        line-height: 1.5;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       HOME
+       ===================================================== */
+
+    #Home {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #Home .spline-nebula {
+        position: absolute;
+
+        width: 160%;
+        height: 160%;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .section p1 {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    #About {
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+
+    #About p,
+    #About p1,
+    #About p2,
+    #About p6,
+    #About p7,
+    #About p21 {
+        position: relative;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 15px 0;
+
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       SKILLS
+       ===================================================== */
+
+    #Skills {
+        padding-top: 100px;
+        overflow: hidden;
+    }
+
+    /* Hide the giant desktop skill bar */
+
+    .skills-bar {
+        display: none;
+    }
+
+    /* Hide desktop timeline */
+
+    .timeline-branch1,
+    .timeline-branch2,
+    .timeline-branch3,
+    .timeline-branch4,
+    .timeline-branch5,
+    .timeline-branch6,
+    .timeline-branch7,
+    .timeline-branch8,
+    .timeline-branch9,
+    .timeline-branch10,
+    .timeline-branch11,
+    .timeline-branch12,
+    .timeline-branch13,
+    .timeline-branch14 {
+
+        display: none;
+    }
+
+    /* Hide desktop-positioned skill icons */
+
+    .icon-cplusplus,
+    .icon-python,
+    .icon-html,
+    .icon-css,
+    .icon-java,
+    .icon-javascript,
+    .icon-mediapipe,
+    .icon-pytorch,
+    .icon-opencv,
+    .icon-tensorflow,
+    .icon-cad,
+    .icon-ai,
+    .icon-cfd,
+    .icon-fea {
+
+        display: none;
+    }
+
+    /* Make skill text normal */
+
+    #Skills p,
+    #Skills p1,
+    #Skills p2,
+    #Skills p3,
+    #Skills p4,
+    #Skills p5,
+    #Skills p6,
+    #Skills p7,
+    #Skills p8,
+    #Skills p9,
+    #Skills p10,
+    #Skills p11,
+    #Skills p12,
+    #Skills p13,
+    #Skills p14,
+    #Skills p15,
+    #Skills p16,
+    #Skills p17,
+    #Skills p18,
+    #Skills p19,
+    #Skills p20 {
+
+        position: relative;
+
+        top: auto !important;
+        left: auto !important;
+
+        display: inline-block;
+
+        width: auto;
+        max-width: 100%;
+
+        margin: 6px 4px;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       PROJECTS
+       ===================================================== */
+
+    #Projects {
+        width: 100%;
+        min-height: 100svh;
+
+        padding: 100px 16px 60px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        overflow: visible;
+    }
+
+    #Projects h4 {
+        position: relative;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100%;
+
+        margin-bottom: 15px;
+
+        font-size: clamp(36px, 10vw, 52px);
+
+        text-align: center;
+
+        color: #fff;
+    }
+
+    .projects-subtitle {
+        position: relative;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100%;
+
+        margin-bottom: 30px;
+
+        font-size: 16px;
+
+        text-align: center;
+    }
+
+    .projects-dropdown-container {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .project-dropdown {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+
+        transform: none !important;
+
+        filter: none;
+    }
+
+    /* Remove desktop project offsets */
+
+    .project-1,
+    .project-2,
+    .project-3,
+    .project-4 {
+        transform: none !important;
+    }
+
+    .project-dropdown__face {
+        width: 100%;
+
+        min-height: 60px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 17px 55px 17px 20px;
+
+        border-radius: 18px;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .project-dropdown__text {
+        font-size: 18px;
+    }
+
+    .project-dropdown__items {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+
+        max-height: 0;
+
+        padding: 0 18px;
+
+        border-radius: 15px;
+    }
+
+    .project-dropdown input:checked ~ .project-dropdown__items {
+        max-height: 500px;
+
+        padding: 18px;
+    }
+
+    #Projects .project-dropdown__description,
+    #Projects .project-dropdown__items p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .project-dropdown__arrow {
+        right: 20px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    #Contact {
+        min-height: auto;
+
+        padding: 100px 20px 70px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Contact .social-forms {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+
+        margin: 20px 0 35px;
+
+        align-items: center;
+
+        gap: 14px;
+    }
+
+    #Contact .social-forms li {
+        width: 100%;
+    }
+
+    #Contact .social-forms li a {
+        width: 100%;
+
+        justify-content: center;
+
+        min-height: 48px;
+
+        font-size: 16px;
+    }
+
+    #Contact form {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 20px;
+
+        border-radius: 15px;
+    }
+
+    #Contact form input,
+    #Contact form textarea {
+        width: 100%;
+
+        font-size: 16px !important;
+
+        padding: 12px !important;
+
+        /* Prevents iPhone Safari from zooming when typing */
+        min-height: 44px;
+    }
+
+    #Contact form textarea {
+        min-height: 120px;
+    }
+
+    #Contact form button {
+        min-height: 48px;
+
+        width: 100%;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       3D OBJECTS
+       ===================================================== */
+
+    .spline-blob {
+        width: 90%;
+        height: 50%;
+
+        top: 70%;
+        left: 50%;
+
+        transform: translate(-50%, -50%) scale(0.5);
+
+        pointer-events: none;
+    }
+
+    .spline-nebula {
+        width: 140%;
+        height: 140%;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+
+    /* =====================================================
+       SCROLL DOTS
+       ===================================================== */
+
+    .scroll-dots {
+        right: 8px;
+        top: 50%;
+
+        gap: 8px;
+    }
+
+    .scroll-dots .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+
+    /* =====================================================
+       DECORATIVE ARROWS / CURVES
+       ===================================================== */
+
+    .arrow-container,
+    .curve1,
+    .curve2,
+    .curve3,
+    .arrow-tip1,
+    .arrow-tip2,
+    .arrow-tip3 {
+
+        display: none;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        min-height: 60px;
+
+        padding: 20px 15px;
+
+        font-size: 13px;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       LOADER
+       ===================================================== */
+
+    #glyph-decoder {
+        font-size: 2rem;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .glyph-sub {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .glyph-coords {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       DISABLE HOVER-ONLY EFFECTS ON TOUCH
+       ===================================================== */
+
+    @media (hover: none) {
+
+        .nav-links li a:hover {
+            background-image: none;
+            color: #fff;
+        }
+
+        #Contact .social-forms li a:hover i {
+            transform: none;
+            box-shadow: 0 0 10px #fff;
+        }
+
+        .scroll-dots .dot:hover {
+            transform: none;
+        }
+    }
+}
+
+
+/* =========================================================
+   SMALL iPHONES
+   ========================================================= */
+
+@media screen and (max-width: 390px) {
+
+    .section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .section h1,
+    .section h2,
+    .section h3,
+    .section h4,
+    .section h5 {
+        font-size: 34px;
+    }
+
+    .project-dropdown__text {
+        font-size: 16px;
+    }
+
+    #Contact form {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================================
+   iPHONE LANDSCAPE
+   ========================================================= */
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+
+    .section {
+        min-height: 100svh;
+        padding-top: 75px;
+        padding-bottom: 40px;
+    }
+
+    .navbar {
+        height: 55px;
+    }
+
+    .nav-links {
+        top: 55px;
+    }
+
+    #Projects,
+    #Contact {
+        padding-top: 75px;
+    }
+}
 
 }

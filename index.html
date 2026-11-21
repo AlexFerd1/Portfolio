@@ -1,341 +1,270 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Ferdico</title> 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="/Css/Home.css" />
-  <link rel="shortcut icon" type="image/ico" href="/Images/favicon.ico"/>
- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js"></script> <!--Spline-->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Alex Ferdico</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<link href="Css/Home.css" rel="stylesheet"/>
+<link href="Images/favicon.ico" rel="shortcut icon" type="image/ico"/>
+<script src="https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js" type="module"></script> <!--Spline-->
 </head>
 <body>
-
-  
 <!-- Spline 3D Background Blob -->
-<div class="spline-blob">
-<spline-viewer url="https://prod.spline.design/u4tpncNcUwYflUBO/scene.splinecode"></spline-viewer>
-</div>
 <!-- Spline 3D Background Nebula -->
-<div class="spline-nebula">
-<spline-viewer loading-anim-type="none" url="https://prod.spline.design/0CiGop-E6om4WZE7/scene.splinecode"></spline-viewer>
-</div>
 <!-- Spline Robot -->
-<div class="spline-Robot">
-<spline-viewer url="https://prod.spline.design/TCZcX8moB-ezwS06/scene.splinecode"></spline-viewer>
+<header>
+<nav class="navbar">
+<div class="logo">
+<a href="index.html">
+<!--<img src="/images/Homelogo.png" alt="HomePageLogo" class="logo-img" />-->
+</a>
 </div>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">
-         <!--<img src="/images/Homelogo.png" alt="HomePageLogo" class="logo-img" />--> 
-        </a>
-      </div>
-
-      <!-- Hamburger Icon -->
-      <button class="hamburger" id="hamburger-menu">&#9776;</button>
-
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#Home" class ="noselect"><span>0.</span> Home</a></li><li class ="separator" class ="noselect">|</li>
-        <li><a href="#About" class ="noselect"><span>1.</span> About</a></li><li class ="separator" class ="noselect">|</li>
-        <li><a href="#Skills" class ="noselect"><span>2.</span> Skills</a></li><li class ="separator" class ="noselect">|</li>
-        <li><a href="#Projects" class ="noselect"><span>3.</span> Projects</a></li><li class ="separator" class ="noselect">|</li>
-        <li><a href="#Contact" class ="noselect"><span>4.</span> Contact</a></li><li class ="separator" class ="noselect">|</li>
-        <li><a href= "../Resume/Resume.pdf" target = "_blank" class ="noselect"> <span>5.</span> Resume</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Main content -->
-  <main>
-  <div class="arrow-container">
-  <div class="curve1"></div>
-  <div class="arrow-tip1"></div>
-  <div class="curve2"></div>
-  <div class="arrow-tip2"></div>
-  <div class="curve3"></div>
-  <div class="arrow-tip3"></div>
-  <div class = "skills-bar"></div>
-  <div class = "skills-bar-branch1"></div>
-</div>
+<!-- Hamburger Icon -->
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger-menu" type="button">☰</button>
+<!-- Navigation Links -->
+<ul class="nav-links" id="nav-links">
+<li><a class="noselect" href="#Home"><span>0.</span> Home</a></li><li class="separator">|</li>
+<li><a class="noselect" href="#About"><span>1.</span> About</a></li><li class="separator">|</li>
+<li><a class="noselect" href="#Skills"><span>2.</span> Skills</a></li><li class="separator">|</li>
+<li><a class="noselect" href="#Projects"><span>3.</span> Projects</a></li><li class="separator">|</li>
+<li><a class="noselect" href="#Contact"><span>4.</span> Contact</a></li><li class="separator">|</li>
+<li><a class="noselect" href="Resume/Resume.pdf" rel="noopener noreferrer" target="_blank"> <span>5.</span> Resume</a></li>
+</ul>
+</nav>
+</header>
+<!-- Main content -->
+<main>
 <div id="loader">
 <div id="glyph-decoder"></div>
 <div class="glyph-sub">Deciphering archive…</div>
 <div class="glyph-coords">⟁ 29.9792° N · 31.1342° E</div>
 </div>
-    <section id="Home" class="section">
-      <h1 class ="noselect">Welcome
-        I'm Alex
-      </h1>
-      <p class ="noselect">Interact with the 3D model below!</p>
-      <p1 class ="noselect">I am thrilled to have you here. While exploring this site, I hope you learn more about me.</p1>
-    </section>
-    <section id="About" class="section">
-      <h2 class ="noselect">About</h2>
-      <p2 class ="noselect">Currently the President for the PEP E-board commission. Also currently leader for the Autonomus Boat for the 2026-2027 PEP competition. </p2>
-      <p6 class ="noselect">I'm currently going to University at Buffalo for Mechanical and Aerospace Engineering.</p6>
-      <p7 class ="noselect">After graduation, I plan to work in the Aerospace sector and eventually advance into Robotics.</p7>
-      <p21 class = "noselect">Interact with the model below!</p21>
-    </section>
+<section class="section" id="Home">
+<h1 class="noselect">Welcome I'm Alex </h1>
+<p class="noselect">Interact with the 3D model below!</p>
+<p1 class="noselect">I am thrilled to have you here. While exploring this site, I hope you learn more about me.</p1>
+<div class="spline-nebula">
+<spline-viewer loading-anim-type="none" url="https://prod.spline.design/0CiGop-E6om4WZE7/scene.splinecode"></spline-viewer>
+</div></section>
+<section class="section" id="About">
+<div aria-hidden="true" class="arrow-container about-arrow-art"><svg class="about-arrows-svg" preserveAspectRatio="none" viewBox="0 0 1920 720" xmlns="http://www.w3.org/2000/svg"><path class="about-main-stroke" d="M 60 60 C 135 125, 232 195, 337 283 S 439 372, 477 420"></path><path class="about-small-stroke" d="M 316 145 C 333 201, 372 231, 438 232"></path><path class="about-small-stroke" d="M 460 262 C 481 318, 517 341, 580 341"></path><path class="about-small-stroke" d="M 708 400 C 733 454, 774 480, 837 480"></path><path class="about-arrow-head" d="M 429 222 L 439 232 L 429 240"></path><path class="about-arrow-head" d="M 570 332 L 581 341 L 570 350"></path><path class="about-arrow-head" d="M 827 471 L 838 480 L 827 489"></path></svg></div><h2 class="noselect">About</h2>
+<p2 class="noselect">Currently the President for the PEP E-board commission. Also currently leader for the Autonomus Boat for the 2026-2027 PEP competition. </p2>
+<p6 class="noselect">I'm currently going to University at Buffalo for Mechanical and Aerospace Engineering.</p6>
+<p7 class="noselect">After graduation, I plan to work in the Aerospace sector and eventually advance into Robotics.</p7>
+<p21 class="noselect">Interact with the model below!</p21>
+<div class="spline-blob">
+<spline-viewer url="https://prod.spline.design/u4tpncNcUwYflUBO/scene.splinecode"></spline-viewer>
+</div></section>
+<section class="section energy-section" id="Skills">
+<!-- TVA Timeline Overlay -->
+<div class="skills-timeline-wrapper">
+<svg class="timeline-branch1" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch2" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch3" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch4" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch5" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch6" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch7" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch8" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch9" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch10" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch11" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch12" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch13" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+<svg class="timeline-branch14" viewbox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M300 280 Q360 250 410 210 Q450 180 500 140" fill="none" stroke-linecap="round"></path>
+</svg>
+</div>
+<img class="icon-cplusplus" src="Images/c++.png"/>
+<img class="icon-python" draggable="false" src="Images/Python-logo.png"/>
+<img class="icon-html" draggable="false" src="Images/html 5.png"/>
+<img class="icon-css" draggable="false" src="Images/css3.png"/>
+<img class="icon-java" draggable="false" src="Images/java.png"/>
+<img class="icon-javascript" draggable="false" src="Images/JavaScript.png"/>
+<img class="icon-mediapipe" draggable="false" src="Images/mediapipe.png"/>
+<img class="icon-pytorch" draggable="false" src="Images/pytorch.png"/>
+<img class="icon-opencv" draggable="false" src="Images/OpenCv.png"/>
+<img class="icon-tensorflow" draggable="false" src="Images/Tensorflow.png"/>
+<img class="icon-cad" draggable="false" src="Images/cad.png"/>
+<img class="icon-ai" draggable="false" src="Images/ai.jpeg"/>
+<img class="icon-cfd" draggable="false" src="Images/CFD.png"/>
+<img class="icon-fea" draggable="false" src="Images/FEA.png"/>
+<h3 class="noselect skills-hover">Skills</h3>
+<p3 class="noselect hover-text">Python</p3>
+<p8 class="noselect hover-text1">C++</p8>
+<p9 class="noselect hover-text2">Java</p9>
+<p10 class="noselect hover-text3">Html</p10>
+<p11 class="noselect hover-text4">Css</p11>
+<p18 class="noselect hover-text5">JavaScript</p18>
+<p12 class="noselect hover-text6">ML/AI</p12>
+<p13 class="noselect hover-text7">CFD</p13>
+<p14 class="noselect hover-text8">FEA</p14>
+<p15 class="noselect hover-text9">CAD</p15>
+<p16 class="noselect hover-text10">Pytorch</p16>
+<p17 class="noselect hover-text11">OpenCV</p17>
+<p19 class="noselect hover-text12">MediaPipe</p19>
+<p20 class="noselect hover-text13">Tensorflow</p20>
+<div class="skills-bar"></div><div aria-label="Skills timeline" class="skills-original-responsive"><svg aria-hidden="true" class="skills-connections" preserveaspectratio="none" viewbox="0 0 1400 440" xmlns="http://www.w3.org/2000/svg"><path class="skills-spine" d="M0 210 H1400"></path><path class="skills-branch" d="M 22 210 Q 56 188 100 140"></path><path class="skills-branch" d="M 35 210 Q 70 254 100 292"></path><path class="skills-branch" d="M 222 210 Q 256 188 300 140"></path><path class="skills-branch" d="M 235 210 Q 270 254 300 292"></path><path class="skills-branch" d="M 422 210 Q 456 188 500 140"></path><path class="skills-branch" d="M 435 210 Q 470 254 500 292"></path><path class="skills-branch" d="M 622 210 Q 656 188 700 140"></path><path class="skills-branch" d="M 635 210 Q 670 254 700 292"></path><path class="skills-branch" d="M 822 210 Q 856 188 900 140"></path><path class="skills-branch" d="M 835 210 Q 870 254 900 292"></path><path class="skills-branch" d="M 1022 210 Q 1056 188 1100 140"></path><path class="skills-branch" d="M 1035 210 Q 1070 254 1100 292"></path><path class="skills-branch" d="M 1222 210 Q 1256 188 1300 140"></path><path class="skills-branch" d="M 1235 210 Q 1270 254 1300 292"></path></svg><div class="skill-tile top" style="--n:0"><img alt="C++" loading="lazy" src="Images/c++.png"/><span>C++</span></div><div class="skill-tile bottom" style="--n:0"><span>Pytorch</span><img alt="Pytorch" loading="lazy" src="Images/pytorch.png"/></div><div class="skill-tile top" style="--n:1"><img alt="Java" loading="lazy" src="Images/java.png"/><span>Java</span></div><div class="skill-tile bottom" style="--n:1"><span>OpenCV</span><img alt="OpenCV" loading="lazy" src="Images/OpenCv.png"/></div><div class="skill-tile top" style="--n:2"><img alt="Html" loading="lazy" src="Images/html 5.png"/><span>Html</span></div><div class="skill-tile bottom" style="--n:2"><span>Tensorflow</span><img alt="Tensorflow" loading="lazy" src="Images/Tensorflow.png"/></div><div class="skill-tile top" style="--n:3"><img alt="Css" loading="lazy" src="Images/css3.png"/><span>Css</span></div><div class="skill-tile bottom" style="--n:3"><span>CAD</span><img alt="CAD" loading="lazy" src="Images/cad.png"/></div><div class="skill-tile top" style="--n:4"><img alt="JavaScript" loading="lazy" src="Images/JavaScript.png"/><span>JavaScript</span></div><div class="skill-tile bottom" style="--n:4"><span>ML/AI</span><img alt="ML/AI" loading="lazy" src="Images/ai.jpeg"/></div><div class="skill-tile top" style="--n:5"><img alt="Python" loading="lazy" src="Images/Python-logo.png"/><span>Python</span></div><div class="skill-tile bottom" style="--n:5"><span>CFD</span><img alt="CFD" loading="lazy" src="Images/CFD.png"/></div><div class="skill-tile top" style="--n:6"><img alt="MediaPipe" loading="lazy" src="Images/mediapipe.png"/><span>MediaPipe</span></div><div class="skill-tile bottom" style="--n:6"><span>FEA</span><img alt="FEA" loading="lazy" src="Images/FEA.png"/></div></div></section>
+<section class="section" id="Projects">
+<h4 class="noselect">Projects</h4>
 
-    <section id="Skills" class="section energy-section">
-      <!-- TVA Timeline Overlay -->
-  <div class="skills-timeline-wrapper">
-    <svg class="timeline-branch1"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch2"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch3"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch4"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch5"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch6"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch7"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch8"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch9"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch10"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch11"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch12"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch13"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-<svg class="timeline-branch14"  viewBox="0 0 600 400"xmlns="http://www.w3.org/2000/svg">
-      <path
-      d="M300 280 Q360 250 410 210 Q450 180 500 140"  fill="none" stroke-linecap="round"/>
-</svg>
-
-  </div>
-      <img src="../Images/c++.png" class="icon-cplusplus">
-      <img src="../Images/Python-logo.png" class = "icon-python" draggable="false">
-      <img src="../Images/html 5.png" class = "icon-html" draggable="false">
-      <img src="../Images/css3.png" class = "icon-css" draggable="false">
-      <img src="../Images/java.png" class = "icon-java" draggable="false">
-      <img src="../Images/JavaScript.png" class = "icon-javascript" draggable="false">
-      <img src="../Images/mediapipe.png" class = "icon-mediapipe" draggable="false">
-      <img src="../Images/pytorch.png" class = "icon-pytorch" draggable="false">
-      <img src="../Images/OpenCv.png" class = "icon-opencv" draggable="false">
-      <img src="../Images/Tensorflow.png" class = "icon-tensorflow" draggable="false">
-      <img src="../Images/cad.png" class = "icon-cad" draggable="false">
-      <img src="../Images/ai.jpeg" class = "icon-ai" draggable="false">
-      <img src="../Images/CFD.png" class = "icon-cfd" draggable="false">
-      <img src="../Images/FEA.png" class = "icon-fea" draggable="false">
-      <h3 class ="noselect skills-hover">Skills</h3>
-      <p3 class ="noselect hover-text">Python</p3>
-      <p8 class ="noselect hover-text1">C++</p8>
-      <p9 class = "noselect hover-text2">Java</p9>
-      <p10 class ="noselect hover-text3">Html</p10>
-      <p11 class = "noselect hover-text4">Css</p11>
-      <p18 class = "noselect hover-text5">JavaScript</p18>
-      <p12 class ="noselect hover-text6">ML/AI</p12>
-      <p13 class = "noselect hover-text7">CFD</p13>
-      <p14 class ="noselect hover-text8">FEA</p14>
-      <p15 class = "noselect hover-text9">CAD</p15>
-      <P16 class = "noselect hover-text10">Pytorch</P16>
-      <p17 class = "noselect hover-text11">OpenCV</p17>
-      <p19 class = "noselect hover-text12">MediaPipe</p19>
-      <p20 class ="noselect hover-text13">Tensorflow</p20>
-      
-    </section>
-  
-<section id="Projects" class="section">
-  <h4 class="noselect">Projects</h4>
-  <p class="projects-subtitle noselect">Some of my projects:</p>
-
-  <div class="projects-dropdown-container">
-
-    <div class="project-dropdown project-1">
-      <input type="checkbox" id="project-ai-asl">
-
-      <label class="project-dropdown__face" for="project-ai-asl">
-        <span class="project-dropdown__text noselect">AI ASL Detection</span>
-        <span class="project-dropdown__arrow"></span>
-      </label>
-
-      <div class="project-dropdown__items">
-        <div class="noselect">
+<div class="projects-dropdown-container">
+<div class="project-dropdown project-1">
+<input id="project-ai-asl" type="checkbox"/>
+<label class="project-dropdown__face" for="project-ai-asl">
+<span class="project-dropdown__text noselect">AI ASL Detection</span>
+<span class="project-dropdown__arrow"></span>
+</label>
+<div class="project-dropdown__items">
+<div class="noselect">
           Using MediaPipe, TensorFlow, OpenCV, PyTorch, and Python to train a new AI model
           to recognize ASL hand signals and output to the screen what gesture you are making
           with either one or both hands.
         </div>
-      </div>
-    </div>
-
-    <div class="project-dropdown project-2">
-      <input type="checkbox" id="project-guitar">
-
-      <label class="project-dropdown__face" for="project-guitar">
-        <span class="project-dropdown__text noselect">Custom Guitar</span>
-        <span class="project-dropdown__arrow"></span>
-      </label>
-
-      <div class="project-dropdown__items">
-        <div class="noselect">
+</div>
+</div>
+<div class="project-dropdown project-2">
+<input id="project-guitar" type="checkbox"/>
+<label class="project-dropdown__face" for="project-guitar">
+<span class="project-dropdown__text noselect">Custom Guitar</span>
+<span class="project-dropdown__arrow"></span>
+</label>
+<div class="project-dropdown__items">
+<div class="noselect">
           Using a 3D scanner and guitars I own, I will scan two different guitars, import them
           into CAD, merge the two body styles together, and customize features such as the body
           shape, hardware, and whammy bar.
         </div>
-      </div>
-    </div>
-
-    <div class="project-dropdown project-3">
-      <input type="checkbox" id="project-portfolio">
-
-      <label class="project-dropdown__face" for="project-portfolio">
-        <span class="project-dropdown__text noselect">Portfolio Website</span>
-        <span class="project-dropdown__arrow"></span>
-      </label>
-
-      <div class="project-dropdown__items">
-        <div class="noselect">
+</div>
+</div>
+<div class="project-dropdown project-3">
+<input id="project-portfolio" type="checkbox"/>
+<label class="project-dropdown__face" for="project-portfolio">
+<span class="project-dropdown__text noselect">Portfolio Website</span>
+<span class="project-dropdown__arrow"></span>
+</label>
+<div class="project-dropdown__items">
+<div class="noselect">
           A personal portfolio website built with HTML, CSS, and JavaScript to showcase my
           engineering, programming, and design projects.
         </div>
-      </div>
-    </div>
-
-    <div class="project-dropdown project-4">
-      <input type="checkbox" id="project-senior-design">
-
-      <label class="project-dropdown__face" for="project-senior-design">
-        <span class="project-dropdown__text noselect">Senior Design</span>
-        <span class="project-dropdown__arrow"></span>
-      </label>
-
-      <div class="project-dropdown__items">
-        <div class="noselect">
+</div>
+</div>
+<div class="project-dropdown project-4">
+<input id="project-senior-design" type="checkbox"/>
+<label class="project-dropdown__face" for="project-senior-design">
+<span class="project-dropdown__text noselect">Senior Design</span>
+<span class="project-dropdown__arrow"></span>
+</label>
+<div class="project-dropdown__items">
+<div class="noselect">
           Our group is creating an Remote Controlled electric boat that also has use hold 60lbs from scratch to be used in the PEP compition for 2027. We will be building a brand new Hull and redoing all electronics, we are going to 
           use CFD and FEA to optimize our design for efficiency and reliability since we have to cover 1 nautical mile.
         </div>
-      </div>
-    </div>
-
-  </div>
-
-  <svg class="goo-svg" xmlns="http://www.w3.org/2000/svg">
-    <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-      <feColorMatrix
-        in="blur"
-        type="matrix"
-        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-        result="goo"
-      />
-      <feBlend in="SourceGraphic" in2="goo" />
-    </filter>
-  </svg>
+</div>
+</div>
+</div>
+<svg class="goo-svg" xmlns="http://www.w3.org/2000/svg">
+<filter id="goo">
+<fegaussianblur in="SourceGraphic" result="blur" stddeviation="10"></fegaussianblur>
+<fecolormatrix in="blur" result="goo" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"></fecolormatrix>
+<feblend in="SourceGraphic" in2="goo"></feblend>
+</filter>
+</svg>
 </section>
-
-
-    <section id="Contact" class="section">
-  <h5 class ="noselect">Contact:</h5>
-  <p5 class ="noselect">Any Questions? Don't hesitate to reach out!</p5>
-
-<form
-  action="https://formspree.io/f/xjglzyjy"
-  method="POST"
->
+<section class="section" id="Contact">
+<h5 class="noselect">Contact:</h5>
+<p5 class="noselect">Any Questions? Don't hesitate to reach out!</p5>
+<form action="https://formspree.io/f/xjglzyjy" class="contact-form" id="contact-form" method="POST">
 <label>
   Your name: 
-   <input type="text" name="name">
+   <input name="name" required="" type="text"/>
 </label>
-  <label>
+<label>
     Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
+    <input name="email" required="" type="email"/>
+</label>
+<label>
     Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Submit</button>
-</form>
-
-  <!-- Social links -->
-  <ul class="social-forms">
-    <li>
-      <a href="https://www.linkedin.com/in/alex-ferdico-294941a0" target="_blank">
-        <i class="fab fa-linkedin"></i>
-        <span class="social-text" class ="noselect">Alex Ferdico</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/AlexFerd1" target="_blank">
-        <i class="fab fa-github"></i>
-        <span class="social-text" class ="noselect">AlexFerd1</span>
-      </a>
-    </li>
-    <li>
-      <a href="mailto:alex.ferdico@example.com" target="_blank">
-        <i class="fas fa-envelope"></i>
-        <span class="social-text" class ="noselect">Alexferdico57@gmail.com</span>
-      </a>
-    </li>
-  </ul>
-</section>
- 
-  </main>
+    <textarea name="message" required=""></textarea>
+</label>
+<!-- your other form fields go here -->
+<button type="submit">Submit</button>
+<div aria-live="polite" id="form-status" role="status"></div></form>
+<!-- Social links -->
+<ul class="social-forms">
+<li>
+<a href="https://www.linkedin.com/in/alex-ferdico-294941a0" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-linkedin"></i>
+<span class="noselect">Alex Ferdico</span>
+</a>
+</li>
+<li>
+<a href="https://github.com/AlexFerd1" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-github"></i>
+<span class="noselect">AlexFerd1</span>
+</a>
+</li>
+<li>
+<a href="mailto:Alexferdico57@gmail.com" rel="noopener noreferrer" target="_blank">
+<i class="fas fa-envelope"></i>
+<span class="noselect">Alexferdico57@gmail.com</span>
+</a>
+</li>
+</ul>
+<div class="spline-Robot">
+<spline-viewer url="https://prod.spline.design/TCZcX8moB-ezwS06/scene.splinecode"></spline-viewer>
+</div></section>
+</main>
 <!-- Scroll Dots -->
 <div class="scroll-dots">
-  <div class="dot active" data-target="Home"></div>
-  <div class="dot" data-target="About"></div>
-  <div class="dot" data-target="Skills"></div>
-  <div class="dot" data-target="Projects"></div>
-  <div class="dot" data-target="Contact"></div>
+<button aria-label="Scroll to Home" class="dot active" data-target="Home" type="button"></button>
+<button aria-label="Scroll to About" class="dot" data-target="About" type="button"></button>
+<button aria-label="Scroll to Skills" class="dot" data-target="Skills" type="button"></button>
+<button aria-label="Scroll to Projects" class="dot" data-target="Projects" type="button"></button>
+<button aria-label="Scroll to Contact" class="dot" data-target="Contact" type="button"></button>
 </div>
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Alex Ferdico. Planet Earth. All Rights Reserved.</p>
-  </footer>
-
- <script src = "JavaScript/Decoder.js"></script>
-   <!-- Neon cursor element -->
-  <canvas id="neon-trail"></canvas>
-  <script src="JavaScript/main.js"></script>
-</body>
+<!-- Footer -->
+<footer>
+<p>© 2026 Alex Ferdico. Planet Earth. All Rights Reserved.</p>
+</footer>
+<script src="JavaScript/Decoder.js"></script>
+<!-- Neon cursor element -->
+<canvas id="neon-trail"></canvas>
+<script src="JavaScript/main.js"></script>
+<script defer="True" src="JavaScript/responsive.js"></script></body>
 </html>
